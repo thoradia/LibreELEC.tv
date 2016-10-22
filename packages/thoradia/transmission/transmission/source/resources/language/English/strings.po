@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+
+msgctxt "#30000"
+msgid "Settings"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Access"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Allowed IP Addresses"
+msgstr ""
+
+msgctxt "#30003"
+msgid "Port"
+msgstr ""
+
+msgctxt "#30004"
+msgid "Username"
+msgstr ""
+
+msgctxt "#30005"
+msgid "Password"
+msgstr ""
+
+msgctxt "#30006"
+msgid "Folders"
+msgstr ""
+
+msgctxt "#30007"
+msgid "Config"
+msgstr ""
+
+msgctxt "#30008"
+msgid "Download"
+msgstr ""
+
+msgctxt "#30009"
+msgid "Incomplete"
+msgstr ""
+
+msgctxt "#30010"
+msgid "Watch"
+msgstr ""

@@ -1,0 +1,12 @@
+<settings>
+    <setting id="tx_allowed" value="*.*.*.*" />
+    <setting id="tx_config" value="/storage/.kodi/userdata/addon_data/service.transmission/config" />
+    <setting id="tx_download" value="/storage/downloads/transmission/downloads" />
+    <setting id="tx_downloads" value="/storage/downloads/transmission/downloads" />
+    <setting id="tx_incomplete" value="/storage/downloads/transmission/incomplete" />
+    <setting id="tx_password" value="" />
+    <setting id="tx_port" value="9091" />
+    <setting id="tx_username" value="" />
+    <setting id="tx_watch" value="/storage/downloads/transmission/watch" />
+</settings>
+
