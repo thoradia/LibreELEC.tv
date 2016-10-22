@@ -13,6 +13,7 @@ PKG_MAINTAINER="thoradia"
 PKG_REV="100"
 PKG_SHORTDESC="Transmission: a fast, easy and free BitTorrent client"
 PKG_LONGDESC="Transmission ($PKG_VERSION) is a fast, easy and free BitTorrent client"
+PKG_DISCLAIMER="You are on your own"
 
 PKG_CONFIGURE_OPTS_TARGET="--enable-daemon      \
                            --enable-utp         \
