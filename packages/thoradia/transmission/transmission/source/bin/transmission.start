@@ -1,0 +1,30 @@
+#!/bin/sh
+
+. /etc/profile
+oe_setup_addon service.transmission
+
+export TRANSMISSION_WEB_HOME="$ADDON_DIR/web"
+
+mkdir -p "$tx_config"     \
+         "$tx_download"   \
+         "$tx_incomplete" \
+         "$tx_watch"
+
+if [ -n "$tx_password" ] && [ -n "$tx_username" ]
+then
+  tx_auth="--auth --password $tx_password --username $tx_username"
+fi
+
+sysctl -w net.core.rmem_max=4194304
+sysctl -w net.core.wmem_max=1048576
+
+EVENT_NOEPOLL=1                        \
+TRANSMISSION_WEB_HOME="$ADDON_DIR/web" \
+transmission-daemon                    \
+  --allowed        "$tx_allowed"       \
+  --config-dir     "$tx_config"        \
+  --download-dir   "$tx_download"      \
+  --port           "$tx_port"          \
+  --incomplete-dir "$tx_incomplete"    \
+  --watch-dir      "$tx_watch"         \
+  $tx_auth
