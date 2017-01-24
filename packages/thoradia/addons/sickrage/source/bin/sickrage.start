@@ -1,0 +1,7 @@
+#!/bin/sh
+
+. /etc/profile
+oe_setup_addon service.sickrage
+
+python $ADDON_DIR/SickRage/SickBeard.py \
+       --datadir="$ADDON_HOME"
