@@ -1,0 +1,7 @@
+#!/bin/sh
+
+. /etc/profile
+oe_setup_addon service.headphones
+
+python $ADDON_DIR/headphones/Headphones.py \
+       --datadir="$ADDON_HOME"

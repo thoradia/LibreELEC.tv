@@ -1,0 +1,12 @@
+diff -Naur headphones-0.5.16/headphones/config.py headphones-0.5.16-HTTP_HOST/headphones/config.py
+--- headphones-0.5.16/headphones/config.py	2016-06-10 01:23:22.000000000 +0200
++++ headphones-0.5.16-HTTP_HOST/headphones/config.py	2016-11-07 23:03:09.894338206 +0100
+@@ -125,7 +125,7 @@
+     'HPUSER': (str, 'General', ''),
+     'HTTPS_CERT': (path, 'General', ''),
+     'HTTPS_KEY': (path, 'General', ''),
+-    'HTTP_HOST': (str, 'General', 'localhost'),
++    'HTTP_HOST': (str, 'General', '0.0.0.0'),
+     'HTTP_PASSWORD': (str, 'General', ''),
+     'HTTP_PORT': (int, 'General', 8181),
+     'HTTP_PROXY': (int, 'General', 0),
