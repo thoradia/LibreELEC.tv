@@ -1,0 +1,14 @@
+[Unit]
+Description=Deluge service
+Documentation=http://deluge-torrent.org/
+After=network.target
+Requires=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh /storage/.kodi/addons/service.deluge/bin/deluge.start
+ExecStop=/bin/sh /storage/.kodi/addons/service.deluge/bin/deluge.stop
+RemainAfterExit=yes
+
+[Install]
+WantedBy=kodi.target
