@@ -1,0 +1,18 @@
+#!/bin/sh
+
+. /etc/profile
+oe_setup_addon service.deluge
+
+if [ -f "$ADDON_HOME/init.sh" ]; then
+  sh "$ADDON_HOME/init.sh"
+fi
+
+while true; do
+  nslookup localhost &> /dev/null
+  [ "$?" = "0" ] && break
+  echo "Waiting 1 second for DNS"
+  sleep 1
+done
+
+cd "$ADDON_DIR/deluge"
+LD_LIBRARY_PATH="$PWD" python deluged -d -c "$ADDON_HOME"

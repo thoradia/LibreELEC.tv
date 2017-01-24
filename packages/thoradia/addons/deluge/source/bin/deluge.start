@@ -1,0 +1,10 @@
+#!/bin/sh
+
+. /etc/profile
+oe_setup_addon service.deluge
+
+systemctl enable "$ADDON_DIR/system.d/service.deluged.service"
+systemctl start service.deluged
+
+systemctl enable "$ADDON_DIR/system.d/service.deluge-web.service"
+systemctl start service.deluge-web

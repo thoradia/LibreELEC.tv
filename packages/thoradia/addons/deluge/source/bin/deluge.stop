@@ -1,0 +1,10 @@
+#!/bin/sh
+
+. /etc/profile
+oe_setup_addon service.deluge
+
+systemctl stop service.deluged
+systemctl disable service.deluged
+
+systemctl stop service.deluge-web
+systemctl disable service.deluge-web
