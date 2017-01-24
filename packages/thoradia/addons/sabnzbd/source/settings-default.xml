@@ -1,0 +1,3 @@
+<settings>
+   <setting id="sabnzbd_server" value="0.0.0.0:8085" />
+</settings>
