@@ -1,0 +1,12 @@
+[Unit]
+Description=Sonarr
+Documentation=https://sonarr.tv/
+After=network.target
+Requires=network.target
+
+[Service]
+ExecStart=/bin/sh /storage/.kodi/addons/service.sonarr/bin/sonarr.start
+Restart=always
+
+[Install]
+WantedBy=kodi.target

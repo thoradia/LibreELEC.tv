@@ -1,0 +1,6 @@
+#!/bin/sh
+
+. /etc/profile
+oe_setup_addon service.sonarr
+
+mono $ADDON_DIR/NzbDrone/NzbDrone.exe -data=$ADDON_HOME -nobrowser
