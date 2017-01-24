@@ -1,0 +1,11 @@
+<settings>
+    <setting id="tx_allowed" value="*.*.*.*" />
+    <setting id="tx_download" value="/storage/.kodi/userdata/addon_data/service.transmission/downloads" />
+    <setting id="tx_incomplete" value="/storage/.kodi/userdata/addon_data/service.transmission/incomplete" />
+    <setting id="tx_password" value="" />
+    <setting id="tx_port" value="9091" />
+    <setting id="tx_separate_incomplete" value="true" />
+    <setting id="tx_username" value="" />
+    <setting id="tx_watch" value="/storage/.kodi/userdata/addon_data/service.transmission/watch" />
+</settings>
+
