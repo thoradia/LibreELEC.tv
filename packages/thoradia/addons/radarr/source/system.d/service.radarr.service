@@ -1,0 +1,12 @@
+[Unit]
+Description=Radarr
+Documentation=https://github.com/Radarr/Radarr
+After=network.target
+Requires=network.target
+
+[Service]
+ExecStart=/bin/sh /storage/.kodi/addons/service.radarr/bin/radarr.start
+Restart=always
+
+[Install]
+WantedBy=kodi.target
