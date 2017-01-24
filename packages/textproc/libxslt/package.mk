@@ -36,7 +36,8 @@ PKG_CONFIGURE_OPTS_HOST="  ac_cv_header_ansidecl_h=no \
                            --disable-shared \
                            --without-python \
                            --with-libxml-prefix=$ROOT/$TOOLCHAIN \
-                           --without-crypto"
+                           --without-crypto \
+                           --with-pic"
 
 PKG_CONFIGURE_OPTS_TARGET="ac_cv_header_ansidecl_h=no \
                            --enable-static \
