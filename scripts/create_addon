@@ -116,6 +116,7 @@ pack_addon() {
        -e "s|@PROVIDER_NAME@|$PROVIDER_NAME|g" \
        -e "s|@PKG_ADDON_PROVIDES@|$PKG_ADDON_PROVIDES|g" \
        -e "s|@PKG_ADDON_SCREENSHOT@|$PKG_ADDON_SCREENSHOT|g" \
+       -e "s|@VPA@|$ADDON_VERSION/$PROJECT/$ARCH|g" \
        -i $ADDON_BUILD/$PKG_ADDON_ID/addon.xml
 
   if [ "$2" != "-test" ] ; then
@@ -131,6 +132,7 @@ pack_addon() {
 
     mkdir -p $ADDON_INSTALL_DIR
     cp $ADDON_BUILD/$PKG_ADDON_ID-$ADDONVER.zip $ADDON_INSTALL_DIR
+    md5sum $ADDON_INSTALL_DIR/$PKG_ADDON_ID-$ADDONVER.zip > $ADDON_INSTALL_DIR/$PKG_ADDON_ID-$ADDONVER.zip.md5
     if [ -f $ADDON_BUILD/$PKG_ADDON_ID/changelog.txt ]; then
       cp $ADDON_BUILD/$PKG_ADDON_ID/changelog.txt $ADDON_INSTALL_DIR/changelog-$ADDONVER.txt
     fi
