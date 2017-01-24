@@ -1,0 +1,37 @@
+#!/bin/sh
+
+. /etc/profile
+oe_setup_addon service.transmission
+
+mkdir -p "$tx_download"   \
+         "$tx_watch"
+
+if [ "$tx_separate_incomplete" = "false" ]; then
+  incomplete="--no-incomplete-dir"
+else
+  mkdir -p "$tx_incomplete"
+  incomplete="--incomplete-dir \"$tx_incomplete\""
+fi
+
+if [ -n "$tx_password" ] && [ -n "$tx_username" ]; then
+  tx_auth="--auth --password \"$tx_password\" --username \"$tx_username\""
+fi
+
+sysctl -w net.core.rmem_max=4194304
+sysctl -w net.core.wmem_max=1048576
+
+if [ -f "$ADDON_HOME/init.sh" ]; then
+  sh "$ADDON_HOME/init.sh"
+fi
+
+eval "EVENT_NOEPOLL=1                          \
+      TRANSMISSION_WEB_HOME=\"$ADDON_DIR/web\" \
+      transmission-daemon                      \
+      --allowed        \"$tx_allowed\"         \
+      --config-dir     \"$ADDON_HOME\"         \
+      --download-dir   \"$tx_download\"        \
+      --port           \"$tx_port\"            \
+      --watch-dir      \"$tx_watch\"           \
+      $incomplete                              \
+      $tx_auth"
+

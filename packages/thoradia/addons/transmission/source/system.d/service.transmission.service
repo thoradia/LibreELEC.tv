@@ -1,0 +1,12 @@
+[Unit]
+Description=transmission
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+Type=forking
+ExecStart=/bin/sh /storage/.kodi/addons/service.transmission/bin/transmission.start
+Restart=on-failure
+
+[Install]
+WantedBy=kodi.target
