@@ -1,0 +1,12 @@
+[Unit]
+Description=headphones
+Documentation=https://github.com/rembo10/headphones
+After=network.target
+Requires=network.target
+
+[Service]
+ExecStart=/bin/sh /storage/.kodi/addons/service.headphones/bin/headphones.start
+Restart=always
+
+[Install]
+WantedBy=kodi.target
