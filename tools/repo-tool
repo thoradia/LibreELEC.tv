@@ -36,6 +36,7 @@ update_addons_xml() {
     dir=$(dirname $line)
     if [ "$olddir" = "$dir" ] ; then
       rm -f $line
+      rm -f $line.md5
     fi
     olddir=$dir
   done
@@ -71,6 +72,9 @@ touch_addons_xml() {
   for PROJECT in $(ls -1 projects); do
     for archfile in projects/$PROJECT/linux/linux.*.conf ; do
       ARCH=`echo $archfile | sed -n '$s/\.conf//;$s/.*\.//p'`
+      if [ "$PROJECT" = "imx6" ]; then
+        ARCH="arm"
+      fi
       if [ ! -d target/addons/$ADDON_VERSION/$PROJECT/$ARCH ]; then
         break
       fi
@@ -98,6 +102,9 @@ build() {
   for PROJECT in $2; do
     for archfile in projects/$PROJECT/linux/linux.*.conf ; do
       ARCH=`echo $archfile | sed -n '$s/\.conf//;$s/.*\.//p'`
+      if [ "$PROJECT" = "imx6" ]; then
+        ARCH="arm"
+      fi
       for package in $(find $1 -iname package.mk) ; do
         (
         . $package
@@ -157,6 +164,9 @@ elif [ "$1" = "-b" -a -n "$2" ]; then
       ;;
     all)
       repo="packages/addons packages/mediacenter/kodi-binary-addons"
+      ;;
+    thoradia)
+      repo="packages/thoradia"
       ;;
     *)
       usage
