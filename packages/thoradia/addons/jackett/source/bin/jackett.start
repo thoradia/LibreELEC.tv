@@ -1,0 +1,6 @@
+#!/bin/sh
+
+. /etc/profile
+oe_setup_addon service.jackett
+
+mono $ADDON_DIR/Jackett/JackettConsole.exe --DataFolder $ADDON_HOME
