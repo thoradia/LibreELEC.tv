@@ -1,0 +1,13 @@
+[Unit]
+Description=SABnzbd
+Documentation=https://sabnzbd.org/
+After=network.target
+Requires=network.target
+
+[Service]
+Type=forking
+ExecStart=/bin/sh /storage/.kodi/addons/service.sabnzbd/bin/sabnzbd.start
+Restart=always
+
+[Install]
+WantedBy=kodi.target
