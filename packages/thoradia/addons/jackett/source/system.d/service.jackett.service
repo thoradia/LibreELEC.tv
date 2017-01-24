@@ -1,0 +1,12 @@
+[Unit]
+Description=Jackett
+Documentation=https://github.com/Jackett/Jackett
+After=network.target
+Requires=network.target
+
+[Service]
+ExecStart=/bin/sh /storage/.kodi/addons/service.jackett/bin/jackett.start
+Restart=always
+
+[Install]
+WantedBy=kodi.target
