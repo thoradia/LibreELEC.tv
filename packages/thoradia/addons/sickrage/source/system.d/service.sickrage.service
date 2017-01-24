@@ -1,0 +1,12 @@
+[Unit]
+Description=SickRage
+Documentation=https://sickrage.github.io/
+After=network.target
+Requires=network.target
+
+[Service]
+ExecStart=/bin/sh /storage/.kodi/addons/service.sickrage/bin/sickrage.start
+Restart=always
+
+[Install]
+WantedBy=kodi.target
