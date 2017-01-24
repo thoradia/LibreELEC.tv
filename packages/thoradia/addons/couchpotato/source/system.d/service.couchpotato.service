@@ -1,0 +1,12 @@
+[Unit]
+Description=CouchPotato
+Documentation=https://couchpota.to/
+After=network.target
+Requires=network.target
+
+[Service]
+ExecStart=/bin/sh /storage/.kodi/addons/service.couchpotato/bin/couchpotato.start
+Restart=always
+
+[Install]
+WantedBy=kodi.target

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+. /etc/profile
+oe_setup_addon service.couchpotato
+
+python $ADDON_DIR/CouchPotato/CouchPotato.py \
+       --config_file $ADDON_HOME/settings.conf \
+       --data_dir $ADDON_HOME
