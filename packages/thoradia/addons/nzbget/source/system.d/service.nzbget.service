@@ -1,0 +1,14 @@
+[Unit]
+Description=NZBGet
+Documentation=http://nzbget.net/
+After=network.target
+Requires=network.target
+
+[Service]
+Type=forking
+ExecStartPre=/bin/sh /storage/.kodi/addons/service.nzbget/bin/config_nzbget
+ExecStart=/storage/.kodi/addons/service.nzbget/bin/nzbget -c /storage/.kodi/userdata/addon_data/service.nzbget/nzbget.conf -D
+ExecStop=/storage/.kodi/addons/service.nzbget/bin/nzbget -c /storage/.kodi/userdata/addon_data/service.nzbget/nzbget.conf -Q
+
+[Install]
+WantedBy=kodi.target
