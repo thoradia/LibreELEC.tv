@@ -1,2 +1,5 @@
+2:
+- Service after/requires multi-user.target network-online.target
+
 1:
 - Initial add-on
