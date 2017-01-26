@@ -1,3 +1,6 @@
+7:
+- Service after/requires multi-user.target network-online.target
+
 6:
 - Rebuild
 
