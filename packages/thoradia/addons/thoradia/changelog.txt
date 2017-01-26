@@ -1,3 +1,6 @@
+5:
+- Rename add-on
+
 4:
 - Mention Radarr
 
