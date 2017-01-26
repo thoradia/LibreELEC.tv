@@ -1,8 +1,8 @@
 [Unit]
 Description=NZBGet
 Documentation=http://nzbget.net/
-After=network.target
-Requires=network.target
+After=multi-user.target network-online.target
+Requires=multi-user.target network-online.target
 
 [Service]
 Type=forking
