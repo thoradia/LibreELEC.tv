@@ -1,3 +1,6 @@
+11:
+- Service after/requires multi-user.target network-online.target
+
 10:
 - Update to 2.0.0.4472
 
