@@ -1,3 +1,6 @@
+6:
+- Service after/requires multi-user.target network-online.target
+
 5:
 - Enable start daemon button
 - Wait for DNS
