@@ -1,8 +1,8 @@
 [Unit]
 Description=headphones
 Documentation=https://github.com/rembo10/headphones
-After=network.target
-Requires=network.target
+After=multi-user.target network-online.target
+Requires=multi-user.target network-online.target
 
 [Service]
 ExecStart=/bin/sh /storage/.kodi/addons/service.headphones/bin/headphones.start

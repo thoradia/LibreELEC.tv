@@ -1,3 +1,6 @@
+8:
+- Service after/requires multi-user.target network-online.target
+
 7:
 - Remove strip_lto
 
