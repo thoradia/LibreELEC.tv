@@ -5,5 +5,4 @@ oe_setup_addon service.sabnzbd
 
 python $ADDON_DIR/SABnzbd/SABnzbd.py \
        --config-file $ADDON_HOME/ \
-       --server "$sabnzbd_server" \
-       --daemon
+       --server "$sabnzbd_server"

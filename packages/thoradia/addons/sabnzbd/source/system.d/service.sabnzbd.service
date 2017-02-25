@@ -5,7 +5,6 @@ After=multi-user.target network-online.target
 Requires=multi-user.target network-online.target
 
 [Service]
-Type=forking
 ExecStart=/bin/sh /storage/.kodi/addons/service.sabnzbd/bin/sabnzbd.start
 Restart=always
 

@@ -1,3 +1,6 @@
+8:
+- Update to 1.2.1
+
 7:
 - Service after/requires multi-user.target network-online.target
 
