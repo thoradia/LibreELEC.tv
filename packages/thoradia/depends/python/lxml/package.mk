@@ -1,5 +1,5 @@
 PKG_NAME="lxml"
-PKG_VERSION="3.7.1"
+PKG_VERSION="3.7.2"
 PKG_LICENSE="BSD"
 PKG_SITE="http://lxml.de/"
 PKG_URL="https://github.com/lxml/lxml/archive/$PKG_NAME-$PKG_VERSION.tar.gz"
