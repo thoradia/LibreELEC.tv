@@ -1,5 +1,5 @@
 PKG_NAME="cryptography"
-PKG_VERSION="1.7.1"
+PKG_VERSION="1.7.2"
 PKG_LICENSE="BSD"
 PKG_SITE="https://cryptography.io/"
 PKG_URL="https://github.com/pyca/$PKG_NAME/archive/$PKG_VERSION.tar.gz"
