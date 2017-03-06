@@ -1,3 +1,7 @@
+8:
+- Update to 1.3.14
+- Update Python dependencies
+
 7:
 - Update libtorrent-rasterbar to 1.0.11
 
@@ -12,7 +16,7 @@
 - Remove strip_lto
 
 3:
-- Update python dependencies
+- Update Python dependencies
 
 2:
 - Rebuild
