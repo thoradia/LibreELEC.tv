@@ -1,17 +1,17 @@
 PKG_NAME="deluge"
-PKG_VERSION="1.3.13"
+PKG_VERSION="1.3.14"
 PKG_LICENSE="GPLv3"
 PKG_SITE="http://deluge-torrent.org/"
 PKG_URL="https://github.com/deluge-torrent/deluge/archive/$PKG_NAME-$PKG_VERSION.tar.gz"
 PKG_SOURCE_DIR="deluge-deluge-$PKG_VERSION"
-PKG_DEPENDS_TARGET="toolchain attrs cffi chardet constantly enum34 incremental libtorrent-rasterbar lxml mako pyasn1 pyasn1-modules pyopenssl python-gettext pyxdg service_identity six twisted zope.interface"
+PKG_DEPENDS_TARGET="toolchain attrs automat cffi chardet constantly enum34 incremental libtorrent-rasterbar lxml mako pyasn1 pyasn1-modules pyopenssl python-gettext pyxdg service_identity six twisted zope.interface"
 PKG_SECTION="service"
 
 PKG_IS_ADDON="yes"
 PKG_ADDON_NAME="Deluge"
 PKG_ADDON_TYPE="xbmc.service"
 PKG_MAINTAINER="thoradia"
-PKG_REV="7"
+PKG_REV="8"
 PKG_SHORTDESC="$PKG_NAME: lightweight, free software, cross-platform BitTorrent client"
 PKG_SHORTDESC="$PKG_NAME ($PKG_VERSION) is a lightweight, free software, cross-platform BitTorrent client"
 PKG_DISCLAIMER="Keep it legal and carry on"
@@ -42,7 +42,7 @@ addon() {
   cp -L $(get_build_dir libtorrent-rasterbar)/.install_pkg/usr/lib/libtorrent-rasterbar.so.? \
         $ADDON_BUILD/$PKG_ADDON_ID/deluge/
 
-  for d in attrs cffi chardet constantly cryptography enum34 incremental libtorrent-rasterbar lxml mako pyasn1 pyasn1-modules pyopenssl python-gettext pyxdg service_identity six twisted zope.interface; do
+  for d in attrs automat cffi chardet constantly cryptography enum34 incremental libtorrent-rasterbar lxml mako pyasn1 pyasn1-modules pyopenssl python-gettext pyxdg service_identity six twisted zope.interface; do
     cp -PR $(get_build_dir $d)/.install_pkg/usr/lib/python*/site-packages/* \
            $ADDON_BUILD/$PKG_ADDON_ID/deluge/
   done
