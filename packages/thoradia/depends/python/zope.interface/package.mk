@@ -1,5 +1,5 @@
 PKG_NAME="zope.interface"
-PKG_VERSION="4.3.2"
+PKG_VERSION="4.3.3"
 PKG_LICENSE="ZPLv2.1"
 PKG_SITE="http://zopeinterface.readthedocs.io/"
 PKG_URL="https://github.com/zopefoundation/$PKG_NAME/archive/$PKG_VERSION.tar.gz"
