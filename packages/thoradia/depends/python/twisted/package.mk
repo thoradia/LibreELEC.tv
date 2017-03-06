@@ -1,5 +1,5 @@
 PKG_NAME="twisted"
-PKG_VERSION="16.5.0"
+PKG_VERSION="17.1.0"
 PKG_LICENSE="MIT"
 PKG_SITE="http://twistedmatrix.com/trac/"
 PKG_URL="https://github.com/twisted/$PKG_NAME/archive/$PKG_NAME-$PKG_VERSION.tar.gz"
