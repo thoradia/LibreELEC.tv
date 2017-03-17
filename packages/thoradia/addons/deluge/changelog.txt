@@ -1,3 +1,6 @@
+9:
+- Update libtorrent-rasterbar to 1.1.2
+
 8:
 - Update to 1.3.14
 - Update Python dependencies
