@@ -1,3 +1,6 @@
+10:
+- Update to 1.2.3
+
 9:
 - Update to 1.2.2
 
