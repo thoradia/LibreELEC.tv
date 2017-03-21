@@ -26,6 +26,7 @@ fi
 
 eval "EVENT_NOEPOLL=1                          \
       TRANSMISSION_WEB_HOME=\"$ADDON_DIR/web\" \
+      nice -1                                  \
       transmission-daemon                      \
       --allowed        \"$tx_allowed\"         \
       --config-dir     \"$ADDON_HOME\"         \
