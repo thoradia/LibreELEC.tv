@@ -3,5 +3,6 @@
 . /etc/profile
 oe_setup_addon service.headphones
 
+nice -1                                    \
 python $ADDON_DIR/headphones/Headphones.py \
        --datadir="$ADDON_HOME"
