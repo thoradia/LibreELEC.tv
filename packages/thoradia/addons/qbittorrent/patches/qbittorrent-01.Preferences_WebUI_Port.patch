@@ -1,0 +1,12 @@
+diff -Naur qBittorrent-release-3.3.12/src/base/preferences.cpp qBittorrent-release-3.3.12-port/src/base/preferences.cpp
+--- qBittorrent-release-3.3.12/src/base/preferences.cpp	2017-04-06 18:51:12.000000000 +0200
++++ qBittorrent-release-3.3.12-port/src/base/preferences.cpp	2017-05-23 23:42:10.182222019 +0200
+@@ -441,7 +441,7 @@
+ 
+ quint16 Preferences::getWebUiPort() const
+ {
+-    return value("Preferences/WebUI/Port", 8080).toInt();
++    return value("Preferences/WebUI/Port", 8880).toInt();
+ }
+ 
+ void Preferences::setWebUiPort(quint16 port)

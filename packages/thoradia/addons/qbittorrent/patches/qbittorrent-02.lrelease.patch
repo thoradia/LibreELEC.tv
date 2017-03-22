@@ -1,0 +1,12 @@
+diff -Naur qBittorrent-release-3.3.12/qm_gen.pri qBittorrent-release-3.3.12-lrelease/qm_gen.pri
+--- qBittorrent-release-3.3.12/qm_gen.pri	2017-04-06 18:51:12.000000000 +0200
++++ qBittorrent-release-3.3.12-lrelease/qm_gen.pri	2017-05-24 02:11:14.733593768 +0200
+@@ -9,7 +9,7 @@
+         !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease-qt4 }
+       } 
+       equals(QT_MAJOR_VERSION, 5) {
+-        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease-qt5 }
++        !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease }
+       }
+     } else {
+         !exists($$QMAKE_LRELEASE) { QMAKE_LRELEASE = lrelease }
