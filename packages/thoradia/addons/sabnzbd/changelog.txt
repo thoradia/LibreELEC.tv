@@ -1,3 +1,6 @@
+11:
+- Fix reported version
+
 10:
 - Update to 1.2.3
 
