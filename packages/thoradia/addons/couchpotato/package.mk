@@ -11,7 +11,7 @@ PKG_IS_ADDON="yes"
 PKG_ADDON_NAME="CouchPotato"
 PKG_ADDON_TYPE="xbmc.service"
 PKG_MAINTAINER="thoradia"
-PKG_REV="11"
+PKG_REV="12"
 PKG_SHORTDESC="$PKG_ADDON_NAME: automatic movie downloading via Usenet and BitTorrent"
 PKG_LONGDESC="$PKG_ADDON_NAME ($PKG_VERSION) downloads movies automatically, easily and in the best quality as soon as they are available"
 PKG_DISCLAIMER="Keep it legal and carry on"
@@ -29,7 +29,7 @@ addon() {
 
   cp -PR $PKG_BUILD/* $ADDON_BUILD/$PKG_ADDON_ID/CouchPotato
 
-  for d in cffi cryptography enum34 lxml pyopenssl six; do
+  for d in cffi cryptography enum34 lxml packaging pyopenssl six; do
     cp -PR $(get_build_dir $d)/.install_pkg/usr/lib/python*/site-packages/* \
            $ADDON_BUILD/$PKG_ADDON_ID/CouchPotato/libs
   done
