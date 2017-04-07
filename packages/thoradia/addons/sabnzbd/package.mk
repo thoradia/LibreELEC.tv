@@ -10,7 +10,7 @@ PKG_IS_ADDON="yes"
 PKG_ADDON_NAME="SABnzbd"
 PKG_ADDON_TYPE="xbmc.service"
 PKG_MAINTAINER="thoradia"
-PKG_REV="11"
+PKG_REV="12"
 PKG_SHORTDESC="$PKG_ADDON_NAME: free and easy binary newsreader"
 PKG_LONGDESC="$PKG_ADDON_NAME ($PKG_VERSION) is a program to download binary files from Usenet servers."
 PKG_DISCLAIMER="Keep it legal and carry on"
@@ -36,7 +36,7 @@ addon() {
          $(get_build_dir setuptools)/build/lib/pkg_resources \
          $ADDON_BUILD/$PKG_ADDON_ID/SABnzbd/
 
-  for d in cheetah cffi cryptography enum34 py-notify yenc; do
+  for d in cheetah cffi cryptography enum34 packaging py-notify yenc; do
     cp -PR $(get_build_dir $d)/.install_pkg/usr/lib/python*/site-packages/* \
            $ADDON_BUILD/$PKG_ADDON_ID/SABnzbd/
   done

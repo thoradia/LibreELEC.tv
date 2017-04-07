@@ -1,3 +1,6 @@
+12:
+- Update Python dependencies
+
 11:
 - Fix reported version
 
@@ -17,7 +20,7 @@
 - Remove strip_lto
 
 5:
-- Update python dependencies
+- Update Python dependencies
 
 4:
 - Rebuild
