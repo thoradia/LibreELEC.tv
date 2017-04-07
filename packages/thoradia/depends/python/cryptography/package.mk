@@ -1,9 +1,9 @@
 PKG_NAME="cryptography"
-PKG_VERSION="1.7.2"
+PKG_VERSION="1.8.1"
 PKG_LICENSE="BSD"
 PKG_SITE="https://cryptography.io/"
 PKG_URL="https://github.com/pyca/$PKG_NAME/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain cffi:host Python"
+PKG_DEPENDS_TARGET="toolchain cffi:host Python packaging"
 PKG_LONGDESC="A package designed to expose cryptographic primitives and recipes to Python developers"
 
 make_target() {
