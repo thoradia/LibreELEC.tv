@@ -10,7 +10,7 @@ PKG_IS_ADDON="yes"
 PKG_ADDON_NAME="Headphones"
 PKG_ADDON_TYPE="xbmc.service"
 PKG_MAINTAINER="thoradia"
-PKG_REV="8"
+PKG_REV="9"
 PKG_SHORTDESC="$PKG_ADDON_NAME: automated music downloader for NZB and Torrent"
 PKG_LONGDESC="$PKG_ADDON_NAME ($PKG_VERSION) is an automated music downloader for NZB and Torrent. It supports SABnzbd, NZBget, Transmission, µTorrent, Deluge and Blackhole."
 PKG_DISCLAIMER="Keep it legal and carry on"
@@ -29,7 +29,7 @@ addon() {
   cp -PR $PKG_BUILD/* \
          $ADDON_BUILD/$PKG_ADDON_ID/headphones 
 
-  for d in cffi cryptography enum34 pyopenssl; do
+  for d in cffi cryptography enum34 packaging pyopenssl; do
     cp -PR $(get_build_dir $d)/.install_pkg/usr/lib/python*/site-packages/* \
            $ADDON_BUILD/$PKG_ADDON_ID/headphones/libs
   done
