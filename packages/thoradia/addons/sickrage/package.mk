@@ -1,5 +1,5 @@
 PKG_NAME="sickrage"
-PKG_VERSION="2017.03.30-2"
+PKG_VERSION="2017.04.03-1"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://sickrage.github.io/"
 PKG_URL="https://github.com/SickRage/SickRage/archive/v$PKG_VERSION.tar.gz"
@@ -11,7 +11,7 @@ PKG_IS_ADDON="yes"
 PKG_ADDON_NAME="SickRage"
 PKG_ADDON_TYPE="xbmc.service"
 PKG_MAINTAINER="thoradia"
-PKG_REV="13"
+PKG_REV="14"
 PKG_SHORTDESC="$PKG_ADDON_NAME: automatic video library manager for TV shows"
 PKG_LONGDESC="$PKG_ADDON_NAME ($PKG_VERSION) watches for new episodes of your favorite shows, and when they are posted it does its magic"
 PKG_DISCLAIMER="Keep it legal and carry on"
@@ -30,7 +30,7 @@ addon() {
   cp -PR $PKG_BUILD/* \
          $ADDON_BUILD/$PKG_ADDON_ID/SickRage/
 
-  for d in cffi cryptography enum34 lxml pyopenssl; do
+  for d in cffi cryptography enum34 lxml packaging pyopenssl; do
     cp -PR $(get_build_dir $d)/.install_pkg/usr/lib/python*/site-packages/* \
            $ADDON_BUILD/$PKG_ADDON_ID/SickRage/
   done

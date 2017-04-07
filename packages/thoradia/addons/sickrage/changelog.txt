@@ -1,3 +1,7 @@
+14:
+- Update to 2017.04.03-1
+- Update Python dependencies
+
 13:
 - Update to 2017.03.30-2
 
@@ -23,7 +27,7 @@
 - Remove *.pyo files to prevent segfaults on aarch64
 
 5:
-- Update python dependencies
+- Update Python dependencies
 
 4:
 - Update to 2016.12.20-2
