@@ -3,6 +3,10 @@
 . /etc/profile
 oe_setup_addon service.sabnzbd
 
+LOCALE="$(thoradia-locale)"
+export LANG="$(basename $LOCALE)"
+export LOCPATH="$(dirname $LOCALE)"
+
 python $ADDON_DIR/SABnzbd/SABnzbd.py \
        --config-file $ADDON_HOME/ \
        --server "$sabnzbd_server"
