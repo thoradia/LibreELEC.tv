@@ -1,0 +1,7 @@
+#!/bin/sh
+
+. /etc/profile
+oe_setup_addon virtual.thoradia-locale
+
+echo "$ADDON_DIR/locale"
+
