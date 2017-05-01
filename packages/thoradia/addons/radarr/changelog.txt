@@ -1,3 +1,6 @@
+9:
+- Update to 0.2.0.654
+
 8:
 - Move thoradia-libmediainfo to virtual.thoradia-mono
 
