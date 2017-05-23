@@ -11,9 +11,9 @@ PKG_IS_ADDON="yes"
 PKG_ADDON_NAME="Deluge"
 PKG_ADDON_TYPE="xbmc.service"
 PKG_MAINTAINER="thoradia"
-PKG_REV="13"
-PKG_SHORTDESC="$PKG_NAME: lightweight, free software, cross-platform BitTorrent client"
-PKG_SHORTDESC="$PKG_NAME ($PKG_VERSION) is a lightweight, free software, cross-platform BitTorrent client"
+PKG_REV="14"
+PKG_SHORTDESC="$PKG_ADDON_NAME: lightweight, free software, cross-platform BitTorrent client"
+PKG_LONGDESC="$PKG_ADDON_NAME ($PKG_VERSION) is a lightweight, free software, cross-platform BitTorrent client"
 PKG_DISCLAIMER="Keep it legal and carry on"
 
 make_target() {
