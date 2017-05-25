@@ -1,5 +1,5 @@
 PKG_NAME="service_identity"
-PKG_VERSION="16.0.0"
+PKG_VERSION="17.0.0"
 PKG_LICENSE="MIT"
 PKG_SITE="https://service-identity.readthedocs.io/en/stable/"
 PKG_URL="https://github.com/pyca/$PKG_NAME/archive/$PKG_VERSION.tar.gz"
