@@ -1,5 +1,5 @@
 PKG_NAME="thoradia_libmediainfo"
-PKG_VERSION="0.7.94"
+PKG_VERSION="0.7.95"
 PKG_LICENSE="GPL"
 PKG_SITE="http://mediaarea.net/en/MediaInfo/Download/Source"
 PKG_URL="http://mediaarea.net/download/source/libmediainfo/$PKG_VERSION/libmediainfo_$PKG_VERSION.tar.bz2"
