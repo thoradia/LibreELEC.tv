@@ -1,5 +1,5 @@
 PKG_NAME="pyopenssl"
-PKG_VERSION="16.2.0"
+PKG_VERSION="17.0.0"
 PKG_LICENSE="ASLv2"
 PKG_SITE="https://pyopenssl.readthedocs.io/en/stable/"
 PKG_URL="https://github.com/pyca/$PKG_NAME/archive/$PKG_VERSION.tar.gz"
