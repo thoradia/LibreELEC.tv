@@ -2,7 +2,7 @@ PKG_NAME="cffi"
 PKG_VERSION="1.10.0"
 PKG_LICENSE="MIT"
 PKG_SITE="http://cffi.readthedocs.io/"
-PKG_URL="https://pypi.python.org/packages/5b/b9/790f8eafcdab455bcd3bd908161f802c9ce5adbf702a83aa7712fcc345b7/cffi-1.10.0.tar.gz"
+PKG_URL="https://files.pythonhosted.org/packages/source/${PKG_NAME:0:1}/$PKG_NAME/$PKG_NAME-$PKG_VERSION.tar.gz"
 PKG_LONGDESC="Foreign Function Interface for Python calling C code"
 
 
