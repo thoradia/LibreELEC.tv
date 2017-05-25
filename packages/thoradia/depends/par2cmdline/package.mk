@@ -1,5 +1,5 @@
 PKG_NAME="par2cmdline"
-PKG_VERSION="0.6.13"
+PKG_VERSION="0.7.1"
 PKG_LICENSE="OSS"
 PKG_SITE="https://github.com/Parchive/par2cmdline"
 PKG_URL="https://github.com/Parchive/$PKG_NAME/archive/v$PKG_VERSION.tar.gz"
