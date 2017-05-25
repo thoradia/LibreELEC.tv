@@ -1,5 +1,5 @@
 PKG_NAME="attrs"
-PKG_VERSION="16.3.0"
+PKG_VERSION="17.2.0"
 PKG_LICENSE="MIT"
 PKG_SITE="https://attrs.readthedocs.io/en/stable/"
 PKG_URL="https://github.com/hynek/$PKG_NAME/archive/$PKG_VERSION.tar.gz"
