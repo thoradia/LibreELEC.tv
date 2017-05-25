@@ -1,5 +1,5 @@
 PKG_NAME="chardet"
-PKG_VERSION="2.3.0"
+PKG_VERSION="3.0.3"
 PKG_LICENSE="LGPL"
 PKG_SITE="https://github.com/chardet/chardet"
 PKG_URL="https://github.com/chardet/$PKG_NAME/archive/$PKG_VERSION.tar.gz"
