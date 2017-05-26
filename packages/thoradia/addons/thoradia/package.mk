@@ -1,6 +1,5 @@
 PKG_NAME="thoradia"
 PKG_SITE="https://github.com/thoradia/thoradia"
-PKG_DEPENDS_TARGET="toolchain"
 PKG_SECTION="service"
 
 PKG_IS_ADDON="yes"
