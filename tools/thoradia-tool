@@ -14,6 +14,9 @@ build_addons() {
   done
 }
 
+tools/repo-tool -b thoradia RPi2
+tools/repo-tool -b thoradia RPi
+
 build_addons Generic    x86_64  Virtual
 build_addons Odroid_C2  aarch64 WeTek_Hub WeTek_Play_2
 build_addons WeTek_Core arm     WeTek_Play imx6
