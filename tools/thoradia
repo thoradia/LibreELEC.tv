@@ -1,9 +1,0 @@
-#!/bin/sh
-tools/repo-tool -b thoradia Generic
-tools/repo-tool -b thoradia Odroid_C2
-tools/repo-tool -b thoradia RPi
-tools/repo-tool -b thoradia RPi2
-tools/repo-tool -b thoradia WeTek_Core
-tools/repo-tool -xml
-
-

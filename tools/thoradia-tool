@@ -1,0 +1,21 @@
+#!/bin/sh
+
+. config/version
+
+build_addons() {
+  echo Building project $1
+  tools/repo-tool -b thoradia $1
+  echo
+  for clone in ${@:3}; do
+    echo Cloning $clone/$2 from $1/$2
+    ARCH=$2 PROJECT=$clone scripts/create_addon thoradia
+    cp -ruv target/addons/$ADDON_VERSION/$1/$2/* target/addons/$ADDON_VERSION/$clone/$2
+    echo
+  done
+}
+
+build_addons Generic    x86_64  Virtual
+build_addons Odroid_C2  aarch64 WeTek_Hub WeTek_Play_2
+build_addons WeTek_Core arm     WeTek_Play imx6
+
+tools/repo-tool -xml
