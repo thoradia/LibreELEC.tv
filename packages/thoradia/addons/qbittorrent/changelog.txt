@@ -1,2 +1,5 @@
+2:
+- Build against qt-everywhere 5.8.0
+
 1:
 - Initial add-on
