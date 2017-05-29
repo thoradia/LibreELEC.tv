@@ -3,4 +3,9 @@
 . /etc/profile
 oe_setup_addon service.jackett
 
+if [ -z "$jk_nice" ]; then
+  jk_nice="0"
+fi
+
+nice -n "$jk_nice" \
 mono $ADDON_DIR/Jackett/JackettConsole.exe --DataFolder $ADDON_HOME

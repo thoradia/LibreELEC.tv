@@ -1,3 +1,6 @@
+20:
+- Add priority setting
+
 19:
 - Update to 0.7.1437
 
