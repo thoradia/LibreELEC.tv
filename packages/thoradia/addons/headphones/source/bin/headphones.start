@@ -3,5 +3,10 @@
 . /etc/profile
 oe_setup_addon service.headphones
 
+if [ -z "$hp_nice" ]; then
+  hp_nice="0"
+fi
+
+nice -n "$hp_nice" \
 python $ADDON_DIR/headphones/Headphones.py \
        --datadir="$ADDON_HOME"

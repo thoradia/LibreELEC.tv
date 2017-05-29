@@ -1,3 +1,7 @@
+10:
+- Update to 8e1cd31
+- Add priority setting
+
 9:
 - Update Python dependencies
 
