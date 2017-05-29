@@ -14,5 +14,9 @@ while true; do
   sleep 1
 done
 
+if [ -z "$dl_nice" ]; then
+  dl_nice="0"
+fi
+
 cd "$ADDON_DIR/deluge"
-LD_LIBRARY_PATH="$PWD" python deluged -d -c "$ADDON_HOME"
+LD_LIBRARY_PATH="$PWD" nice -n "$dl_nice" python deluged -d -c "$ADDON_HOME"

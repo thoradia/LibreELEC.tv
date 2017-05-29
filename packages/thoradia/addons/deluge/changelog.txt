@@ -1,3 +1,6 @@
+15:
+- Add priority setting
+
 14:
 - Fix description
 

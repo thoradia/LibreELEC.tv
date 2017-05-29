@@ -3,5 +3,9 @@
 . /etc/profile
 oe_setup_addon service.deluge
 
+if [ -z "$dl_nice" ]; then
+  dl_nice="0"
+fi
+
 cd "$ADDON_DIR/deluge"
-LD_LIBRARY_PATH="$PWD" python deluge-web -c "$ADDON_HOME"
+LD_LIBRARY_PATH="$PWD" nice -n "$dl_nice" python deluge-web -c "$ADDON_HOME"
