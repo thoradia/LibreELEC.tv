@@ -1,3 +1,6 @@
+19:
+- Fix priority setting
+
 18:
 - Fix priority setting
 
