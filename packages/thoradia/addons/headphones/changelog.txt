@@ -1,3 +1,6 @@
+11:
+- Fix priority setting
+
 10:
 - Update to 8e1cd31
 - Add priority setting
