@@ -3,5 +3,10 @@
 . /etc/profile
 oe_setup_addon service.sickrage
 
+if [ -z "$sr_nice" ]; then
+  sr_nice="0"
+fi
+
+nice -n "$sr_nice" \
 python $ADDON_DIR/SickRage/SickBeard.py \
        --datadir="$ADDON_HOME"
