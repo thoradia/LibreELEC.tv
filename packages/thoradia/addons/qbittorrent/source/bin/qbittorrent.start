@@ -3,6 +3,11 @@
 . /etc/profile
 oe_setup_addon service.qbittorrent
 
+if [ -z "$qb_nice" ]; then
+  qb_nice="0"
+fi
+
+nice -n "$qb_nice" \
 HOME="$ADDON_HOME" qbittorrent-nox -d << EOF
 y
 EOF

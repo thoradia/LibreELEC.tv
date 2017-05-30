@@ -1,3 +1,6 @@
+3:
+- Add priority setting
+
 2:
 - Build against qt-everywhere 5.8.0
 
