@@ -6,29 +6,33 @@ msgid "Status"
 msgstr ""
 
 msgctxt "#30001"
-msgid "Status"
+msgid "LibreELEC"
+msgstr ""
+
+msgctxt "#30002"
+msgid "Thoradia"
 msgstr ""
 
 msgctxt "#30010"
-msgid "Repository does not match LibreELEC"
+msgid "N/A"
 msgstr ""
 
 msgctxt "#30011"
-msgid "Restart Kodi to correct"
+msgid "{}/{}/{}"
 msgstr ""
 
 msgctxt "#30012"
-msgid "Now"
+msgid "{}/{}/{} after Kodi restart"
 msgstr ""
 
 msgctxt "#30013"
+msgid "Please restart Kodi to update the repository"
+msgstr ""
+
+msgctxt "#30014"
+msgid "Now"
+msgstr ""
+
+msgctxt "#30015"
 msgid "Later"
-msgstr ""
-
-msgctxt "#30020"
-msgid "Requires Kodi restart"
-msgstr ""
-
-msgctxt "#30021"
-msgid "Error"
 msgstr ""

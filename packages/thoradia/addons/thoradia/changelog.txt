@@ -1,3 +1,6 @@
+7:
+- Rework default.py
+
 6:
 - Mention qBittorrent
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
    <category   label="30000">
-      <setting label="30001" type="text" id="vpa" enable="false" />
+      <setting label="30001" type="text" id="le"  enable="false" />
+      <setting label="30002" type="text" id="vpa" enable="false" />
    </category>
 </settings>
