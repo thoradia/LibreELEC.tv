@@ -1,3 +1,6 @@
+3:
+- Update thoradia_libmediainfo to 0.7.96
+
 2:
 - Update thoradia_libmediainfo to 0.7.95
 
