@@ -1,5 +1,4 @@
 import os.path
-import urllib2
 import xbmc
 import xbmcaddon
 import xbmcgui
@@ -7,8 +6,6 @@ import xml.etree.ElementTree as etree
 
 
 URL_D = 'https://raw.githubusercontent.com/thoradia/thoradia/master/{}/{}/{}/'
-URL_L = 'https://github.com/thoradia/releases-libreelec/blob/master/{}-{}-{}'
-URL_U = 'https://github.com/thoradia/updates-thoradia/blob/master/{}-{}-{}'
 
 
 def getTag(tree, tag):
@@ -28,11 +25,18 @@ if __name__ == '__main__':
    addon.setSetting('vpa', strings(30010))
    release = getTag(getTree(getXML('repository.libreelec.tv')), 'datadir').text.strip('/').split('/')[-3:]
    addon.setSetting('le', strings(30011).format(*release))
-   try:
-      urllib2.urlopen(URL_L.format(*release)).read()
-   except:
-      pass
-   # fix release here
+
+   if release[1] in ['Virtual']:
+      release[1] = 'Generic'
+   elif release[2] == "aarch64":
+      if release[1] in ['WeTek_Hub', 'WeTek_Play_2']:
+         release[1] = 'Odroid_C2'
+   elif release[2] == 'arm':
+      if release[1] in ['Odroid_C2', 'S905', 'S912']:
+         release[1] = 'RPi2'
+      elif release[1] in ['WeTek_Core', 'WeTek_Hub', 'WeTek_Play_2']:
+         release[1] = 'WeTek_Play'
+
    xml = getXML()
    tree = getTree(xml)
    tag_d = getTag(tree, 'datadir')
@@ -40,10 +44,6 @@ if __name__ == '__main__':
    if tag_d.text == url_d:
       addon.setSetting('vpa', strings(30011).format(*release))
    else:
-      try:
-         urllib2.urlopen(URL_U.format(*release)).read()
-      except:
-         pass
       tag_d.text = url_d
       getTag(tree, 'info').text = url_d + 'addons.xml'
       getTag(tree, 'checksum').text = url_d + 'addons.xml.md5'
