@@ -53,4 +53,4 @@ if __name__ == '__main__':
                                 strings(30013),
                                 nolabel=strings(30014),
                                 yeslabel=strings(30015)) == False:
-         xbmc.restart()
+         xbmc.executebuiltin('RestartApp')
