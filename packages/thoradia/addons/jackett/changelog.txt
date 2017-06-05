@@ -1,3 +1,6 @@
+24:
+- Update to 0.7.1469
+
 23:
 - Rebuild
 
