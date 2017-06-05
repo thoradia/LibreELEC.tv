@@ -1,0 +1,44 @@
+#!/bin/sh
+
+. /etc/profile
+oe_setup_addon service.rtorrent
+
+if [ -z "$rt_nice" ]; then
+  rt_nice="0"
+fi
+
+cd "$ADDON_HOME"
+mkdir -p session
+cp "$ADDON_DIR/doc/rtorrent.rc" rtorrent.rc.sample
+
+if [ ! -e rtorrent.rc ]; then
+  cp "$ADDON_DIR/doc/rtorrent.rc" rtorrent.rc
+fi
+
+if [ "$1" = "cli" ]; then
+  screen -r rtorrent
+elif [ "$1" = "config" ]; then
+  nano "$ADDON_HOME/rtorrent.rc"
+  systemctl restart service.rtorrent
+elif [ "$1" = "start" ]; then
+  if [ -e session/rtorrent.lock -a -z $(pidof rtorrent) ]; then
+    rm -f session/rtorrent.lock
+  fi
+  nice -n "$rt_nice" \
+  screen -dmfa -S rtorrent \
+  rtorrent -n -o import=rtorrent.rc -s session
+elif [ "$1" = "stop" ]; then
+  if [ -n "$(pidof rtorrent)" ]; then
+    killall -INT rtorrent
+    while [ -n "$(pidof rtorrent)" ]; do
+      sleep 1
+    done
+  fi
+else
+  echo "Usage: $(basename $0) command"
+  echo "commands:"
+  echo "cli    attach to rtorrent cli (ctrl-a d to detach)"
+  echo "config edit rtorrent.rc and restart rtorrent"
+  echo "start  start rtorrent"
+  echo "stop   stop rtorrent"
+fi

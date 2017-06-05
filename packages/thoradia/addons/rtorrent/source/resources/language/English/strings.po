@@ -1,0 +1,10 @@
+msgid ""
+msgstr ""
+
+msgctxt "#30000"
+msgid "Priority"
+msgstr ""
+
+msgctxt "#30001"
+msgid "Priority (nice, 0=max, 19=min)"
+msgstr ""
