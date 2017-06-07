@@ -7,7 +7,8 @@ if [ -z "$qb_nice" ]; then
   qb_nice="0"
 fi
 
+HOME="$ADDON_HOME" \
 nice -n "$qb_nice" \
-HOME="$ADDON_HOME" qbittorrent-nox -d << EOF
+qbittorrent-nox -d << EOF
 y
 EOF

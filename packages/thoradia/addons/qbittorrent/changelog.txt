@@ -1,3 +1,7 @@
+5:
+- Fix qbittorrent.start
+- Build against qt-everywhere 5.9.0
+
 4:
 - Update to 3.3.13
 
