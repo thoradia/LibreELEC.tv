@@ -3,6 +3,11 @@
 . /etc/profile
 oe_setup_addon service.sabnzbd
 
+if [ -z "$sa_nice" ]; then
+  sa_nice="0"
+fi
+
+nice -n "$sa_nice" \
 python $ADDON_DIR/SABnzbd/SABnzbd.py \
        --config-file $ADDON_HOME/ \
        --server "$sabnzbd_server"

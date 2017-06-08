@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings>
-   <category label="30000">
-      <setting id="sabnzbd_server" label="30001" type="text" default="0.0.0.0:8085" />
+   <category   label="30000">
+      <setting label="30001" type="text"   id="sabnzbd_server" default="0.0.0.0:8085" />
+   </category>
+   <category   label="30002">
+      <setting label="30003" type="slider" id="sa_nice"        default="0" range="0,1,19" option="int" />
    </category>
 </settings>
 
