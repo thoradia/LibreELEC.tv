@@ -44,3 +44,11 @@ msgstr ""
 msgctxt "#30010"
 msgid "Watch"
 msgstr ""
+
+msgctxt "#30011"
+msgid "Priority"
+msgstr ""
+
+msgctxt "#30012"
+msgid "Priority (nice, 0=max, 19=min)"
+msgstr ""

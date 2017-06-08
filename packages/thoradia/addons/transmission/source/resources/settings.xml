@@ -12,4 +12,7 @@
       <setting label="30009" type="folder" option="writeable" id="tx_incomplete" default="/storage/.kodi/userdata/addon_data/service.transmission/incomplete" visible="eq(-2,true)" />
       <setting label="30010" type="folder" option="writeable" id="tx_watch"      default="/storage/.kodi/userdata/addon_data/service.transmission/watch" />
    </category>
+   <category   label="30011">
+      <setting label="30012" type="slider" id="tx_nice" default="0" range="0,1,19" option="int" />
+   </category>
 </settings>

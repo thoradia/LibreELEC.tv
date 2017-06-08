@@ -17,6 +17,10 @@ if [ -n "$tx_password" ] && [ -n "$tx_username" ]; then
   tx_auth="--auth --password \"$tx_password\" --username \"$tx_username\""
 fi
 
+if [ -z "$tx_nice" ]; then
+  tx_nice="0"
+fi
+
 sysctl -w net.core.rmem_max=4194304
 sysctl -w net.core.wmem_max=1048576
 
@@ -26,6 +30,7 @@ fi
 
 eval "EVENT_NOEPOLL=1                          \
       TRANSMISSION_WEB_HOME=\"$ADDON_DIR/web\" \
+      nice -n $tx_nice                         \
       transmission-daemon                      \
       --allowed        \"$tx_allowed\"         \
       --config-dir     \"$ADDON_HOME\"         \
