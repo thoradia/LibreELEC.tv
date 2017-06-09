@@ -3,6 +3,12 @@
 . /etc/profile
 oe_setup_addon service.nzbget
 
-if [ ! -f $ADDON_HOME/nzbget.conf ]; then
-  cp $ADDON_DIR/config/nzbget.conf $ADDON_HOME/nzbget.conf
+if [ ! -f "$ADDON_HOME/nzbget.conf" ]; then
+  cp "$ADDON_DIR/config/nzbget.conf" "$ADDON_HOME/nzbget.conf"
 fi
+
+if [ -z "$nz_nice" ]; then
+  nz_nice="0"
+fi
+
+nice -n "$nz_nice" nzbget -c "$ADDON_HOME/nzbget.conf" "$@"

@@ -6,9 +6,8 @@ Requires=multi-user.target network-online.target
 
 [Service]
 Type=forking
-ExecStartPre=/bin/sh /storage/.kodi/addons/service.nzbget/bin/config_nzbget
-ExecStart=/storage/.kodi/addons/service.nzbget/bin/nzbget -c /storage/.kodi/userdata/addon_data/service.nzbget/nzbget.conf -D
-ExecStop=/storage/.kodi/addons/service.nzbget/bin/nzbget -c /storage/.kodi/userdata/addon_data/service.nzbget/nzbget.conf -Q
+ExecStart=/bin/sh /storage/.kodi/addons/service.nzbget/bin/config_nzbget -D
+ExecStop=/bin/sh /storage/.kodi/addons/service.nzbget/bin/config_nzbget -Q
 
 [Install]
 WantedBy=kodi.target
