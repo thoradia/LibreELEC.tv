@@ -21,5 +21,5 @@ makeinstall_target() {
 }
 
 addon() {
-  : # nop
+  mkdir -p "$ADDON_BUILD/$PKG_ADDON_ID"
 }
