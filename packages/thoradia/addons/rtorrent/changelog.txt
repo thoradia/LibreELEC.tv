@@ -1,0 +1,7 @@
+2:
+- Add changelog.txt
+- Fix xmlrpc-c
+- Force scgi_port
+
+1:
+- Initial add-on

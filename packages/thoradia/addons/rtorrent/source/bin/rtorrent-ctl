@@ -17,16 +17,22 @@ fi
 
 if [ "$1" = "cli" ]; then
   screen -r rtorrent
+
 elif [ "$1" = "config" ]; then
   nano "$ADDON_HOME/rtorrent.rc"
   systemctl restart service.rtorrent
+
 elif [ "$1" = "start" ]; then
   if [ -e session/rtorrent.lock -a -z $(pidof rtorrent) ]; then
     rm -f session/rtorrent.lock
   fi
-  nice -n "$rt_nice" \
-  screen -dmfa -S rtorrent \
-  rtorrent -n -o import=rtorrent.rc -s session
+  nice -n "$rt_nice"                   \
+  screen -dmfa -S rtorrent             \
+  rtorrent -n                          \
+           -o import=rtorrent.rc       \
+           -o scgi_port=localhost:5000 \
+           -s session
+
 elif [ "$1" = "stop" ]; then
   if [ -n "$(pidof rtorrent)" ]; then
     killall -INT rtorrent
