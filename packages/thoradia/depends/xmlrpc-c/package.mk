@@ -7,8 +7,7 @@ PKG_DEPENDS_TARGET="toolchain curl libxml2"
 PKG_LONGDESC="A lightweight RPC library based on XML and HTTP"
 PKG_AUTORECONF="no"
 
-PKG_CONFIGURE_OPTS_TARGET="CURL_CONFIG=$SYSROOT_PREFIX/usr/bin/curl-config \
-                           have_curl_config=yes \
+PKG_CONFIGURE_OPTS_TARGET="have_curl_config=yes \
                            have_xml2_config=yes \
                            --disable-abyss-server \
                            --disable-cgi-server \
@@ -18,7 +17,8 @@ PKG_CONFIGURE_OPTS_TARGET="CURL_CONFIG=$SYSROOT_PREFIX/usr/bin/curl-config \
                            --enable-libxml2-backend"
 
 pre_configure_target() {
-  export CFLAGS="$CFLAGS -I$SYSROOT_PREFIX/usr/include/libxml2"
+  export CURL_CONFIG=$SYSROOT_PREFIX/usr/bin/curl-config
+  export XML2_CONFIG=$SYSROOT_PREFIX/usr/bin/xml2-config
 }
 
 post_makeinstall_target() {

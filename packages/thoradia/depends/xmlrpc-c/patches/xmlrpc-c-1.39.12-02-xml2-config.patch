@@ -1,0 +1,57 @@
+diff -Naur xmlrpc-c-1.39.12/common.mk xmlrpc-c-1.39.12.xml2-config/common.mk
+--- xmlrpc-c-1.39.12/common.mk	2015-12-30 05:22:14.000000000 +0100
++++ xmlrpc-c-1.39.12.xml2-config/common.mk	2017-06-12 20:53:14.929473236 +0200
+@@ -275,7 +275,7 @@
+         -L$(BLDDIR)/lib/expat/xmlparse -lxmlrpc_xmlparse \
+         -L$(BLDDIR)/lib/expat/xmltok   -lxmlrpc_xmltok
+ else
+-  LDLIBS_XML = $(shell xml2-config --libs)
++  LDLIBS_XML = $(shell $(XML2_CONFIG) --libs)
+ endif
+ 
+ # LIBXMLRPC_UTIL_LIBDEP is the string of linker options you need on the link
+diff -Naur xmlrpc-c-1.39.12/src/cpp/Makefile xmlrpc-c-1.39.12.xml2-config/src/cpp/Makefile
+--- xmlrpc-c-1.39.12/src/cpp/Makefile	2015-12-30 05:22:14.000000000 +0100
++++ xmlrpc-c-1.39.12.xml2-config/src/cpp/Makefile	2017-06-12 20:53:14.469470677 +0200
+@@ -46,7 +46,7 @@
+ endif
+ 
+ ifeq ($(ENABLE_LIBXML2_BACKEND),yes)
+-  XML_PARSER_LIBDEP = $(shell xml2-config --libs)
++  XML_PARSER_LIBDEP = $(shell $(XML2_CONFIG) --libs)
+ else
+   XML_PARSER_LIBDEP = \
+     -L$(BLDDIR)/lib/expat/xmlparse -lxmlrpc_xmlparse \
+diff -Naur xmlrpc-c-1.39.12/src/Makefile xmlrpc-c-1.39.12.xml2-config/src/Makefile
+--- xmlrpc-c-1.39.12/src/Makefile	2014-12-28 19:55:09.000000000 +0100
++++ xmlrpc-c-1.39.12.xml2-config/src/Makefile	2017-06-12 20:53:14.417470388 +0200
+@@ -68,7 +68,7 @@
+ 
+ ifeq ($(ENABLE_LIBXML2_BACKEND),yes)
+   XMLRPC_XML_PARSER = xmlrpc_libxml2
+-  XML_PARSER_LIBDEP = $(shell xml2-config --libs)
++  XML_PARSER_LIBDEP = $(shell $(XML2_CONFIG) --libs)
+   XML_PARSER_LIBDEP_DEP =
+ else
+   XMLRPC_XML_PARSER = xmlrpc_expat
+@@ -266,7 +266,7 @@
+   -Isrcdir/lib/util/include \
+ 
+ ifeq ($(ENABLE_LIBXML2_BACKEND),yes)
+-  LIBXML_INCLUDES = $(shell xml2-config --cflags)
++  LIBXML_INCLUDES = $(shell $(XML2_CONFIG) --cflags)
+ else
+   LIBXML_INCLUDES = -Isrcdir/lib/expat/xmlparse
+ endif
+diff -Naur xmlrpc-c-1.39.12/test/cpp/Makefile xmlrpc-c-1.39.12.xml2-config/test/cpp/Makefile
+--- xmlrpc-c-1.39.12/test/cpp/Makefile	2015-12-30 05:22:14.000000000 +0100
++++ xmlrpc-c-1.39.12.xml2-config/test/cpp/Makefile	2017-06-12 20:53:14.785472436 +0200
+@@ -75,7 +75,7 @@
+   LIB_XML =
+   registry.o: D_INTERNAL_EXPAT=-DINTERNAL_EXPAT
+ else
+-  LIB_XML = $(shell xml2-config --libs)
++  LIB_XML = $(shell $(XML2_CONFIG) --libs)
+ endif
+ 
+ test: $(TEST_OBJS) $(TEST_LIBS)
