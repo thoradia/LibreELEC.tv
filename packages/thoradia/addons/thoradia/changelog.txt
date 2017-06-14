@@ -1,3 +1,6 @@
+9:
+- Mention rTorrent and ruTorrent
+
 8:
 - Rework default.py
 
