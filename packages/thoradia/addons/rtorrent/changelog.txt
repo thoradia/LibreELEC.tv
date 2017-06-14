@@ -1,3 +1,6 @@
+3:
+- Refer to session directory with an absolute path
+
 2:
 - Add changelog.txt
 - Fix xmlrpc-c

@@ -31,7 +31,7 @@ elif [ "$1" = "start" ]; then
   rtorrent -n                          \
            -o import=rtorrent.rc       \
            -o scgi_port=localhost:5000 \
-           -s session
+           -s "$ADDON_HOME/session"
 
 elif [ "$1" = "stop" ]; then
   if [ -n "$(pidof rtorrent)" ]; then
