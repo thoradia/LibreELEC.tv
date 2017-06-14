@@ -13,9 +13,9 @@ PKG_ADDON_NAME="ruTorrent"
 PKG_ADDON_TYPE="xbmc.service"
 PKG_ADDON_REQUIRES="service.rtorrent:0.0.0"
 PKG_MAINTAINER="thoradia"
-PKG_REV="1"
+PKG_REV="2"
 PKG_SHORTDESC="$PKG_ADDON_NAME: web front-end for rTorrent"
-PKG_LONGDESC="$PKG_ADDON_NAME ($PKG_VERSION) is ruTorrent is a web front-end for rtorrent designed to emulate the look and feel of µTorrent web user interface"
+PKG_LONGDESC="$PKG_ADDON_NAME ($PKG_VERSION) is a web front-end for rtorrent designed to emulate the look and feel of µTorrent web user interface"
 PKG_DISCLAIMER="Keep it legal and carry on"
 
 configure_target() {
