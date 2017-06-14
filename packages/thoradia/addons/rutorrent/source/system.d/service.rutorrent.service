@@ -1,0 +1,13 @@
+[Unit]
+Description=ruTorrent
+Documentation=https://github.com/Novik/ruTorrent/wiki
+After=multi-user.target network-online.target
+Requires=multi-user.target network-online.target
+
+[Service]
+Type=forking
+ExecStart=/bin/sh /storage/.kodi/addons/service.rutorrent/bin/rutorrent.start
+Restart=on-failure
+
+[Install]
+WantedBy=kodi.target
