@@ -1,3 +1,6 @@
+4:
+- Bind to 127.0.0.1 rather than to localhost
+
 3:
 - Refer to session directory with an absolute path
 

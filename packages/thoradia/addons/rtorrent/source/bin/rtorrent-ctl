@@ -30,7 +30,7 @@ elif [ "$1" = "start" ]; then
   screen -dmfa -S rtorrent             \
   rtorrent -n                          \
            -o import=rtorrent.rc       \
-           -o scgi_port=localhost:5000 \
+           -o scgi_port=127.0.0.1:5000 \
            -s "$ADDON_HOME/session"
 
 elif [ "$1" = "stop" ]; then
