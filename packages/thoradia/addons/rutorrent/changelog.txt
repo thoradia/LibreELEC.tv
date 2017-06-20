@@ -1,3 +1,6 @@
+3:
+- Add mediainfo and unrar
+
 2:
 - Fix description
 
