@@ -12,6 +12,15 @@ diff -Naur ruTorrent-master/conf/config.php ruTorrent-master-config.php/conf/con
  
  	$scgi_port = 5000;
  	$scgi_host = "127.0.0.1";
+@@ -42,8 +42,8 @@
+$pathToExternals = array(
+-  "php" 	=> '',			// Something like /usr/bin/php. If empty, will be found in PATH.
++  "php" 	=> '/storage/.kodi/addons/service.rutorrent/bin/php',			// Something like /usr/bin/php. If empty, will be found in PATH.
+		 "curl"	=> '',			// Something like /usr/bin/curl. If empty, will be found in PATH.
+		 "gzip"	=> '',			// Something like /usr/bin/gzip. If empty, will be found in PATH.
+		 "id"	=> '',			// Something like /usr/bin/id. If empty, will be found in PATH.
+		 "stat"	=> '',			// Something like /usr/bin/stat. If empty, will be found in PATH.
+);
 @@ -52,7 +52,7 @@
  		"localhost",
  	);
