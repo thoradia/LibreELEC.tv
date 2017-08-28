@@ -1,5 +1,5 @@
 PKG_NAME="sonarr"
-PKG_VERSION="2.0.0.4753"
+PKG_VERSION="2.0.0.4949"
 PKG_LICENSE="GPL3"
 PKG_SITE="https://sonarr.tv/"
 PKG_URL="http://download.sonarr.tv/v2/master/mono/NzbDrone.master.$PKG_VERSION.mono.tar.gz"
