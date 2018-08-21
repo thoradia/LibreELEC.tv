@@ -1,7 +1,7 @@
 PKG_NAME="flexget"
 PKG_VERSION="2.14.17"
 PKG_SHA256="67a6a303c536d3a3c598a724bcaf43380897ddebea819c575702702cf619cc8b"
-PKG_REV="5"
+PKG_REV="6"
 PKG_SITE="https://flexget.com"
 PKG_URL="https://github.com/Flexget/Flexget/archive/$PKG_VERSION.tar.gz"
 PKG_SOURCE_DIR="Flexget-$PKG_VERSION"
