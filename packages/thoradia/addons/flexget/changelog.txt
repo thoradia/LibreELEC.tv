@@ -1,3 +1,7 @@
+6
+- Update to 2.14.17
+- Add python-telegram-bot
+
 5
 - Update to 2.12.7
 - Add deluge
