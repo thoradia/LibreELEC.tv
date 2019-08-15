@@ -1,12 +1,12 @@
 PKG_NAME="aria2"
 PKG_VERSION="1.34.0"
 PKG_SHA256="bc68bf9a9f192280846e07d25b801c111ea47b9a954cd4deb6f455dbf5191996"
-PKG_REV="3"
+PKG_REV="4"
 PKG_LICENSE="OpenSSL"
 PKG_SITE="https://aria2.github.io/"
 PKG_URL="https://github.com/aria2/$PKG_NAME/archive/release-$PKG_VERSION.tar.gz"
 PKG_SOURCE_DIR="$PKG_NAME-release-$PKG_VERSION"
-PKG_DEPENDS_TARGET="toolchain libxml2 openssl sqlite zlib"
+PKG_DEPENDS_TARGET="toolchain libxml2 openssl sqlite zlib libssh2"
 PKG_SECTION="service"
 
 PKG_IS_ADDON="yes"
@@ -18,7 +18,7 @@ PKG_LONGDESC="$PKG_ADDON_NAME ($PKG_VERSION) is a lightweight multi-protocol and
 PKG_DISCLAIMER="Keep it legal and carry on"
 
 PKG_TOOLCHAIN="autotools"
-PKG_CONFIGURE_OPTS_TARGET="--disable-shared --enable-static"
+PKG_CONFIGURE_OPTS_TARGET="--disable-shared --enable-static --with-libssh2"
 
 makeinstall_target() {
   $STRIP src/aria2c
