@@ -1419,6 +1419,7 @@ done
       -e "s|@PROVIDER_NAME@|$provider_name|g" \
       -e "s|@PKG_ADDON_PROVIDES@|$PKG_ADDON_PROVIDES|g" \
       -e "s|@PKG_ADDON_SCREENSHOT@|$screenshots|g" \
+      -e "s|@VVPA@|$ADDON_VERSION/$ADDON_VERSION/${DEVICE:-$PROJECT}/$ARCH|g" \
       -e "s|@PKG_ADDON_BROKEN@|$PKG_ADDON_BROKEN|g" \
       -i "$addon_xml"
 }
