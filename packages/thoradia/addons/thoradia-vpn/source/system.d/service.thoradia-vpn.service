@@ -1,0 +1,12 @@
+[Unit]
+Description=thoradia-vpn
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+SyslogIdentifier=%N
+ExecStart=/bin/sh /storage/.kodi/addons/service.thoradia-vpn/bin/thoradia-vpn.start
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
