@@ -1,0 +1,11 @@
+--- ./scripts/common.m4.orig	2012-12-28 11:01:48.469301610 +0100
++++ ./scripts/common.m4	2012-12-28 11:02:02.221126574 +0100
+@@ -238,7 +238,7 @@
+ AC_DEFUN([TORRENT_CHECK_ALIGNED], [
+   AC_MSG_CHECKING(the byte alignment)
+ 
+-  AC_RUN_IFELSE([AC_LANG_SOURCE([
++  AC_LINK_IFELSE([AC_LANG_SOURCE([
+       #include <inttypes.h>
+       int main() {
+         char buf@<:@8@:>@ = { 0, 0, 0, 0, 1, 0, 0, 0 };
