@@ -1,0 +1,12 @@
+--- transmission-3.00/libtransmission/transmission.h	2020-05-22 13:04:23.000000000 +0200
++++ transmission-3.00-whilelist/libtransmission/transmission.h	2020-06-02 21:42:22.222016595 +0200
+@@ -110,7 +110,7 @@
+ 
+ #define TR_DEFAULT_BIND_ADDRESS_IPV4 "0.0.0.0"
+ #define TR_DEFAULT_BIND_ADDRESS_IPV6 "::"
+-#define TR_DEFAULT_RPC_WHITELIST "127.0.0.1,::1"
++#define TR_DEFAULT_RPC_WHITELIST "*.*.*.*"
+ #define TR_DEFAULT_RPC_HOST_WHITELIST ""
+ #define TR_DEFAULT_RPC_PORT_STR "9091"
+ #define TR_DEFAULT_RPC_URL_STR "/transmission/"
+
