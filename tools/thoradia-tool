@@ -1,0 +1,59 @@
+#!/bin/bash
+
+set -e
+
+build_addon() {
+  tools/thoradia-build "${ADDON}"
+}
+
+
+build_project() {
+  WHERE="${DEVICE:-$PROJECT}"
+  echo "Building $WHERE $ARCH"
+  if [ -z "${ADDONS}" ]; then
+    ADDONS="$(find packages/thoradia/addons -maxdepth 1 -mindepth 1 -type d -exec  basename {} \;)"
+  fi
+  for ADDON in ${ADDONS}; do
+    build_addon
+  done
+}
+
+
+build_projects() {
+  echo "Building projects"
+  if [ -n "${PROJECT}" ]; then
+    build_project
+  else
+    ARCH='arm'    DEVICE='RPi2'  PROJECT='RPi'     build_project
+    ARCH='arm'    DEVICE='RPi4'  PROJECT='RPi'     build_project
+    ARCH='x86_64'                PROJECT='Generic' build_project
+    ARCH='arm'    DEVICE='ARMv7' PROJECT='ARM'     build_project
+    ARCH='arm'    DEVICE='ARMv8' PROJECT='ARM'     build_project
+    ARCH='arm'    DEVICE='RPi'   PROJECT='RPi'     build_project
+  fi
+}
+
+
+build_repositories() {
+  echo "Building repositories"
+  . config/options
+  for repo in $(ls -1d ${TARGET_IMG}/${ADDONS}/${ADDON_VERSION}/*/*/); do
+    cd ${repo}
+    (
+      echo '<?xml version="1.0" encoding="UTF-8"?>'
+      echo '<addons>'
+      for addon in $(ls -1d */); do
+        for zip in $(ls -1 ${addon}*.zip); do
+          unzip -p ${zip} */addon.xml | grep -v -e '<?' -e '>resources/'
+        done
+      done
+      echo '</addons>'
+    ) > addons.xml
+    md5sum addons.xml > addons.xml.md5
+    cd - > /dev/null
+  done
+}
+
+
+build_projects
+build_repositories
