@@ -1,0 +1,12 @@
+diff -Naur qBittorrent-release-4.2.0/src/src.pro qbittorrent-4.2.0-lrelease/src/src.pro
+--- qBittorrent-release-4.2.0/src/src.pro	2019-12-03 00:19:18.000000000 +0100
++++ qBittorrent-release-4.2.0-lrelease/src/src.pro	2019-12-06 21:47:42.538384511 +0100
+@@ -72,7 +72,7 @@
+     else: QMAKE_LRELEASE = $$[QT_INSTALL_BINS]/lrelease
+     unix {
+         equals(QT_MAJOR_VERSION, 5) {
+-            !exists($$QMAKE_LRELEASE): QMAKE_LRELEASE = lrelease-qt5
++            !exists($$QMAKE_LRELEASE): QMAKE_LRELEASE = lrelease
+         }
+     }
+     else {

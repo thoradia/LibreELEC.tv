@@ -1,0 +1,11 @@
+diff -Naur qBittorrent-release-4.1.0/src/webui/api/torrentscontroller.cpp qBittorrent-release-4.1.0-qdebug/src/webui/api/torrentscontroller.cpp
+--- qBittorrent-release-4.1.0/src/webui/api/torrentscontroller.cpp	2018-05-04 23:55:42.000000000 +0200
++++ qBittorrent-release-4.1.0-qdebug/src/webui/api/torrentscontroller.cpp	2018-05-06 10:12:40.304771302 +0200
+@@ -31,6 +31,7 @@
+ #include <functional>
+ 
+ #include <QBitArray>
++#include <QDebug>
+ #include <QDir>
+ #include <QJsonArray>
+ #include <QJsonObject>
