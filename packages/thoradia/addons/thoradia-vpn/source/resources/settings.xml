@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+   <category   label="30000">
+      <setting label="30001" id="vpn_conf" type="file" default="/storage/.kodi/userdata/addon_data/service.thoradia-vpn/" mask="*.ovpn" />
+      <setting label="30002" id="vpn_user" type="text" />
+      <setting label="30003" id="vpn_pass" type="text" option="hidden"/>
+      <setting label="30004" id="nice" type="slider" default="10" range="0,1,19" option="int" />
+   </category>
+</settings>
