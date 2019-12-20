@@ -1,0 +1,20 @@
+[Unit]
+Description=Deluge service
+After=multi-user.target network-online.target
+Wants=multi-user.target network-online.target
+
+[Service]
+SyslogIdentifier=%N
+Type=oneshot
+ExecStart=/usr/bin/systemctl enable  /storage/.kodi/addons/service.deluge/system.d/service.deluged.service
+ExecStart=/usr/bin/systemctl enable  /storage/.kodi/addons/service.deluge/system.d/service.deluge-web.service
+ExecStart=/usr/bin/systemctl start   service.deluged
+ExecStart=/usr/bin/systemctl start   service.deluge-web
+ExecStop=/usr/bin/systemctl  stop    service.deluge-web
+ExecStop=/usr/bin/systemctl  stop    service.deluged
+ExecStop=/usr/bin/systemctl  disable service.deluged
+ExecStop=/usr/bin/systemctl  disable service.deluge-web
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
