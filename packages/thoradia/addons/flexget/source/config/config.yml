@@ -1,0 +1,12 @@
+schedules:
+  - tasks: '*'
+    interval:
+      minutes: 30
+
+tasks:
+  NASA:
+    rss:
+      url: https://www.nasa.gov/rss/dyn/TWAN_vodcast.rss
+      all_entries: no
+    accept_all: yes
+    download: /storage/downloads
