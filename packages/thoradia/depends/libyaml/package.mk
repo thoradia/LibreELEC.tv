@@ -1,0 +1,10 @@
+PKG_NAME="libyaml"
+PKG_VERSION="0.2.5"
+PKG_SHA256="fa240dbf262be053f3898006d502d514936c818e422afdcf33921c63bed9bf2e"
+PKG_LICENSE="MIT"
+PKG_SITE="http://pyyaml.org"
+PKG_URL="https://github.com/yaml/${PKG_NAME}/archive/${PKG_VERSION}.tar.gz"
+PKG_DEPENDS_TARGET="toolchain"
+PKG_LONGDESC="yaml is the next generation YAML parser and emitter"
+
+PKG_BUILD_FLAGS="+pic"
