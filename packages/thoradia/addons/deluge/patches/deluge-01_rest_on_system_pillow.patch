@@ -1,0 +1,11 @@
+diff -Naur deluge-2.0.3/deluge-deluge-2.0.3/setup.py deluge-2.0.3-install/deluge-deluge-2.0.3/setup.py
+--- deluge-deluge-2.0.3/setup.py	2019-06-12 19:47:11.000000000 +0200
++++ deluge-deluge-2.0.3/setup.py	2019-08-27 07:28:28.311156767 +0200
+@@ -542,7 +542,6 @@
+     'rencode',
+     'pyopenssl',
+     'pyxdg',
+-    'pillow',
+     'mako',
+     'chardet',
+     'six',
