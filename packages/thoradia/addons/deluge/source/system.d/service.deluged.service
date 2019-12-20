@@ -1,0 +1,9 @@
+[Unit]
+Description=Deluge daemon
+
+[Service]
+SyslogIdentifier=%N
+ExecStart=/bin/sh /storage/.kodi/addons/service.deluge/bin/deluged.ctl -d
+
+[Install]
+WantedBy=service.deluge.service

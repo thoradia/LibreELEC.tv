@@ -1,0 +1,9 @@
+[Unit]
+Description=Deluge web user interface
+
+[Service]
+SyslogIdentifier=%N
+ExecStart=/bin/sh /storage/.kodi/addons/service.deluge/bin/deluge-web.ctl -d
+
+[Install]
+WantedBy=service.deluge.service
