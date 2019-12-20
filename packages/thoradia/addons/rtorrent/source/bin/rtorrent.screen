@@ -1,0 +1,19 @@
+#!/bin/sh
+. /etc/profile
+oe_setup_addon service.rtorrent
+
+HOME=${ADDON_HOME}
+SCREEN=${ADDON_DIR}/bin/screen
+
+case ${1} in
+  start)
+    ${SCREEN} -dmfa -S rtorrent rtorrent.ctl
+    ;;
+  stop)
+    ${SCREEN} -S rtorrent -X quit
+    sleep 1
+    ;;
+  *)
+    ${SCREEN} -r rtorrent
+    ;;
+esac
