@@ -1,0 +1,12 @@
+diff -Naur qt-everywhere-5.11.1/qt-everywhere-src-5.11.1/qtbase/mkspecs/common/gcc-base.conf qt-everywhere-5.11.1-isystem/qt-everywhere-src-5.11.1/qtbase/mkspecs/common/gcc-base.conf
+--- qt-everywhere-5.11.1/qtbase/mkspecs/common/gcc-base.conf	2018-06-26 01:49:01.838868893 +0200
++++ qt-everywhere-5.11.1-isystem/qtbase/mkspecs/common/gcc-base.conf	2018-06-26 01:53:47.437958814 +0200
+@@ -46,7 +46,7 @@
+ QMAKE_CFLAGS_SHLIB         += $$QMAKE_CFLAGS_PIC
+ QMAKE_CFLAGS_STATIC_LIB    += $$QMAKE_CFLAGS_PIC
+ QMAKE_CFLAGS_APP           += $$QMAKE_CFLAGS_PIC
+-QMAKE_CFLAGS_ISYSTEM        = -isystem
++QMAKE_CFLAGS_ISYSTEM        =
+ QMAKE_CFLAGS_YACC          += -Wno-unused -Wno-parentheses
+ QMAKE_CFLAGS_HIDESYMS      += -fvisibility=hidden
+ QMAKE_CFLAGS_EXCEPTIONS_OFF += -fno-exceptions
