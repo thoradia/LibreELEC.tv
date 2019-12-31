@@ -1,0 +1,2 @@
+- Thoradia Add-ons version 24
+- Split add-on versions in corresponding git branches
