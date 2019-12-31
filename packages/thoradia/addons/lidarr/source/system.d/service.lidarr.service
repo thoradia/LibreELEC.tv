@@ -1,0 +1,11 @@
+[Unit]
+Description=Lidarr
+After=multi-user.target network-online.target tools.mono.service
+
+[Service]
+SyslogIdentifier=%N
+ExecStart=/bin/sh /storage/.kodi/addons/service.lidarr/bin/lidarr.ctl -nobrowser
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
