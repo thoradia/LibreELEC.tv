@@ -1,0 +1,12 @@
+[Unit]
+Description=Jackett
+After=multi-user.target network-online.target tools.mono.service
+Wants=multi-user.target network-online.target tools.mono.service
+
+[Service]
+SyslogIdentifier=%N
+ExecStart=/bin/sh /storage/.kodi/addons/service.jackett/bin/jackett.ctl --NoRestart
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
