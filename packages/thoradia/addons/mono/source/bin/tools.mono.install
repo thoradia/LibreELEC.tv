@@ -1,0 +1,20 @@
+#!/bin/sh
+
+_id=tools.mono
+_xz=${_id}.tar.xz
+
+. /etc/profile
+oe_setup_addon ${_id}
+
+cd ${ADDON_DIR}
+if [ -e ${_xz} ]; then
+  echo "Installing Mono"
+  if tar xJf ${_xz}; then
+    echo "Installation succeeded"
+    rm -f ${_xz}
+  else
+    echo "Installation failed"
+    exit 1
+  fi
+fi
+mono -V

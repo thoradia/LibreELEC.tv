@@ -1,0 +1,13 @@
+[Unit]
+Description=Mono installer
+After=multi-user.target
+Wants=multi-user.target
+
+[Service]
+SyslogIdentifier=%N
+Type=oneshot
+ExecStart=/bin/sh /storage/.kodi/addons/tools.mono/bin/tools.mono.install
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
