@@ -1,0 +1,4 @@
+<settings version="2">
+    <setting id="wgp_on_act" default="true">300</setting>
+    <setting id="wgp_on_cal" default="true">*-*-* 03:00:00</setting>
+</settings>
