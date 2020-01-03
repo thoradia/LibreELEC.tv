@@ -1,0 +1,13 @@
+[Unit]
+Description=aria2
+After=multi-user.target network-online.target
+Wants=multi-user.target network-online.target
+ConditionFileNotEmpty=/storage/.kodi/userdata/addon_data/service.aria2/aria2.conf
+
+[Service]
+SyslogIdentifier=%N
+ExecStart=/bin/sh /storage/.kodi/addons/service.aria2/bin/aria2c.ctl --enable-rpc --rpc-listen-all
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
