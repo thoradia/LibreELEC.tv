@@ -1,0 +1,13 @@
+[Unit]
+Description=NZBGet
+After=multi-user.target network-online.target
+Wants=multi-user.target network-online.target
+
+[Service]
+SyslogIdentifier=%N
+Type=forking
+ExecStart=/bin/sh /storage/.kodi/addons/service.nzbget/bin/nzbget.ctl -D
+ExecStop=/bin/sh /storage/.kodi/addons/service.nzbget/bin/nzbget.ctl -Q
+
+[Install]
+WantedBy=multi-user.target
