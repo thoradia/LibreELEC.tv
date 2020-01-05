@@ -1,0 +1,12 @@
+[Unit]
+Description=Bazarr
+After=multi-user.target network-online.target
+Wants=multi-user.target network-online.target
+
+[Service]
+SyslogIdentifier=%N
+ExecStart=/bin/sh /storage/.kodi/addons/service.bazarr/bin/bazarr.ctl
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
