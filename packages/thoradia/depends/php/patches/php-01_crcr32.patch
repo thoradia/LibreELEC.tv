@@ -1,0 +1,11 @@
+--- php-7.4.7/ext/standard/crc32.c	2020-06-09 12:57:28.000000000 +0200
++++ php-7.4.7-crc32/ext/standard/crc32.c	2020-06-16 16:38:44.715057748 +0200
+@@ -45,7 +45,7 @@
+ }
+ 
+ # pragma GCC push_options
+-# pragma GCC target ("+nothing+crc")
++# pragma GCC target ("+crc")
+ static uint32_t crc32_aarch64(uint32_t crc, char *p, size_t nr) {
+ 	while (nr >= sizeof(uint64_t)) {
+ 		crc = __crc32d(crc, *(uint64_t *)p);
