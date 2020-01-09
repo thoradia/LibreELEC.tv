@@ -1,0 +1,8 @@
+#!/bin/sh
+. /etc/profile
+oe_setup_addon service.rutorrent
+
+[ -e ${ADDON_HOME}/share ] || cp -r ${ADDON_DIR}/rutorrent/share ${ADDON_HOME}
+
+exec nice -n "${nice:-10}" \
+httpd -c ${ADDON_DIR}/config/httpd.conf -p "${ru_port:-6880}"

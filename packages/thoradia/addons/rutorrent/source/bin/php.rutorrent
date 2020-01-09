@@ -1,0 +1,4 @@
+#!/bin/sh
+exec /storage/.kodi/addons/service.rutorrent/bin/php \
+-d cgi.force_redirect=0 \
+-d cgi.redirect_status_env=yes
