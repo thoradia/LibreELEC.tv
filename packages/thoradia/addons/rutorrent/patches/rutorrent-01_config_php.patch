@@ -1,0 +1,23 @@
+diff -Naur ruTorrent-master/conf/config.php ruTorrent-master-config.php/conf/config.php
+--- ruTorrent-master/conf/config.php	2015-04-10 11:25:24.000000000 +0200
++++ ruTorrent-master-config.php/conf/config.php	2017-06-14 04:13:37.154095899 +0200
+@@ -24,8 +24,8 @@
+ 	$saveUploadedTorrents = true;		// Save uploaded torrents to profile/torrents directory or not
+ 	$overwriteUploadedTorrents = false;     // Overwrite existing uploaded torrents in profile/torrents directory or make unique name
+ 
+-	$topDirectory = '/';			// Upper available directory. Absolute path with trail slash.
+-	$forbidUserSettings = false;
++	$topDirectory = '/storage';		// Upper available directory. Absolute path with trail slash.
++	$forbidUserSettings = true;
+ 
+ 	$scgi_port = 5000;
+ 	$scgi_host = "127.0.0.1";
+@@ -52,7 +52,7 @@
+ 		"localhost",
+ 	);
+ 
+-	$profilePath = '../share';		// Path to user profiles
++	$profilePath = '/storage/.kodi/userdata/addon_data/service.rutorrent/share';	// Path to user profiles
+ 	$profileMask = 0777;			// Mask for files and directory creation in user profiles.
+ 						// Both Webserver and rtorrent users must have read-write access to it.
+ 						// For example, if Webserver and rtorrent users are in the same group then the value may be 0770.
