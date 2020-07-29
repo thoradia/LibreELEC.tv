@@ -1,0 +1,14 @@
+diff -Naur sabnzbd-3.0.0RC2/sabnzbd/constants.py sabnzbd-3.0.0RC2-host_port/sabnzbd/constants.py
+--- sabnzbd-3.0.0RC2/sabnzbd/constants.py	2020-07-15 14:10:35.000000000 +0200
++++ sabnzbd-3.0.0RC2-host_port/sabnzbd/constants.py	2020-07-29 02:56:40.619088168 +0200
+@@ -72,8 +72,8 @@
+ DEF_SKIN_COLORS = {"Glitter": "Default", "plush": "gold"}
+ DEF_MAIN_TMPL = os.path.normpath("templates/main.tmpl")
+ DEF_INI_FILE = "sabnzbd.ini"
+-DEF_HOST = "127.0.0.1"
+-DEF_PORT = 8080
++DEF_HOST = "0.0.0.0"
++DEF_PORT = 8085
+ DEF_WORKDIR = "sabnzbd"
+ DEF_LOG_FILE = "sabnzbd.log"
+ DEF_LOG_ERRFILE = "sabnzbd.error.log"
