@@ -1,0 +1,12 @@
+[Unit]
+Description=SABnzbd
+After=multi-user.target network-online.target
+Wants=multi-user.target network-online.target
+
+[Service]
+SyslogIdentifier=%N
+ExecStart=/bin/sh /storage/.kodi/addons/service.sabnzbd/bin/sabnzbd.ctl
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
