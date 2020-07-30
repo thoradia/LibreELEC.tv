@@ -1,0 +1,13 @@
+--- ZeroTierOne-1.4.6/make-linux.mk	2019-09-05 20:02:16.000000000 +0200
++++ ZeroTierOne-1.4.6/make-linux.mk	2020-07-30 15:04:17.341829479 +0200
+@@ -264,8 +264,8 @@
+ 		override CXXFLAGS+=-march=armv5 -mfloat-abi=soft -msoft-float -mno-unaligned-access -marm
+ 		ZT_USE_ARM32_NEON_ASM_CRYPTO=0
+ 	else
+-		override CFLAGS+=-march=armv5 -mno-unaligned-access -marm -fexceptions
+-		override CXXFLAGS+=-march=armv5 -mno-unaligned-access -marm -fexceptions
++		override CFLAGS+=-mno-unaligned-access -marm -fexceptions
++		override CXXFLAGS+=-mno-unaligned-access -marm -fexceptions
+ 		ZT_USE_ARM32_NEON_ASM_CRYPTO=0
+ 	endif
+ endif
