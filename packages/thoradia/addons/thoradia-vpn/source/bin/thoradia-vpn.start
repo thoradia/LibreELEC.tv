@@ -3,7 +3,7 @@
 . /etc/profile
 oe_setup_addon service.thoradia-vpn
 
-if [ ! -f ${vpn_conf} -o -z "${vpn_pass}" -o -z "${vpn_user}" ]; then
+if [ ! -f "${vpn_conf}" -o -z "${vpn_pass}" -o -z "${vpn_user}" ]; then
   exit 0
 fi
 
