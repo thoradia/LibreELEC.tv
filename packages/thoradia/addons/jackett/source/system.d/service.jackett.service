@@ -7,7 +7,6 @@ Wants=multi-user.target network-online.target tools.mono.service
 SyslogIdentifier=%N
 ExecStart=/bin/sh /storage/.kodi/addons/service.jackett/bin/jackett.ctl --NoRestart
 Restart=always
-MemoryHigh=125M
 
 [Install]
 WantedBy=multi-user.target

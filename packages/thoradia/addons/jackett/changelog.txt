@@ -1,1 +1,1 @@
-- Jackett version 0.16.105
+- Jackett bootstrap
