@@ -7,7 +7,6 @@ Wants=multi-user.target network-online.target tools.mono.service
 SyslogIdentifier=%N
 ExecStart=/bin/sh /storage/.kodi/addons/service.sonarr/bin/sonarr.ctl -nobrowser
 Restart=always
-MemoryHigh=100M
 
 [Install]
 WantedBy=multi-user.target
