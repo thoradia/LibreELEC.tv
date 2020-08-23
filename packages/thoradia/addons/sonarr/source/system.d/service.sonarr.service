@@ -1,13 +1,12 @@
 [Unit]
 Description=Sonarr
-Documentation=https://sonarr.tv/
-After=kodi.service tools.mono.service
-Requires=tools.mono.service
+After=multi-user.target network-online.target tools.mono.service
+Wants=multi-user.target network-online.target tools.mono.service
 
 [Service]
-ExecStart=/bin/sh /storage/.kodi/addons/service.sonarr/bin/sonarr.start
+SyslogIdentifier=%N
+ExecStart=/bin/sh /storage/.kodi/addons/service.sonarr/bin/sonarr.ctl -nobrowser
 Restart=always
-MemoryHigh=100M
 
 [Install]
-WantedBy=tools.mono.service
+WantedBy=multi-user.target
