@@ -1,3 +1,6 @@
+24
+- Add command-line utils (transmission-remote, transmission-create, transmission-edit and transmission-show)
+
 23
 - Update libevent to 2.1.12-stable
 
