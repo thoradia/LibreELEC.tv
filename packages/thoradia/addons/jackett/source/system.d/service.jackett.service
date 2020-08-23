@@ -1,13 +1,12 @@
 [Unit]
 Description=Jackett
-Documentation=https://github.com/Jackett/Jackett
-After=kodi.service tools.mono.service
-Requires=tools.mono.service
+After=multi-user.target network-online.target tools.mono.service
+Wants=multi-user.target network-online.target tools.mono.service
 
 [Service]
-ExecStart=/bin/sh /storage/.kodi/addons/service.jackett/bin/jackett.start
+SyslogIdentifier=%N
+ExecStart=/bin/sh /storage/.kodi/addons/service.jackett/bin/jackett.ctl --NoRestart
 Restart=always
-MemoryHigh=125M
 
 [Install]
-WantedBy=tools.mono.service
+WantedBy=multi-user.target
