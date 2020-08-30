@@ -1,17 +1,16 @@
 PKG_NAME="qt-everywhere"
-PKG_VERSION="5.14.0"
-PKG_SHA256="be9a77cd4e1f9d70b58621d0753be19ea498e6b0da0398753e5038426f76a8ba"
-PKG_ARCH="any"
+PKG_VERSION="5.15.0"
+PKG_SHA256="22b63d7a7a45183865cc4141124f12b673e7a17b1fe2b91e433f6547c5d548c3"
 PKG_LICENSE="GPL"
 PKG_SITE="http://qt-project.org"
-PKG_URL="http://download.qt.io/archive/qt/5.14/${PKG_VERSION}/single/${PKG_NAME}-src-${PKG_VERSION}.tar.xz"
+PKG_URL="http://download.qt.io/archive/qt/5.15/${PKG_VERSION}/single/${PKG_NAME}-src-${PKG_VERSION}.tar.xz"
 PKG_DEPENDS_TARGET="toolchain openssl pcre2 zlib"
 PKG_LONGDESC="A cross-platform application and UI framework"
 PKG_AUTORECONF="no"
 
 PKG_CONFIGURE_OPTS_TARGET="-prefix /usr
-                           -sysroot $SYSROOT_PREFIX
-                           -hostprefix $TOOLCHAIN
+                           -sysroot ${SYSROOT_PREFIX}
+                           -hostprefix ${TOOLCHAIN}
                            -device linux-libreelec-g++
                            -opensource -confirm-license
                            -release
@@ -35,7 +34,6 @@ PKG_CONFIGURE_OPTS_TARGET="-prefix /usr
                            -no-evdev
                            -no-tslib
                            -no-icu
-                           -no-strip
                            -no-fontconfig
                            -no-dbus
                            -no-opengl
@@ -80,8 +78,8 @@ PKG_CONFIGURE_OPTS_TARGET="-prefix /usr
                            -skip qtxmlpatterns"
 
 configure_target() {
-  QMAKE_CONF_DIR="qtbase/mkspecs/devices/linux-libreelec-g++"
-  QMAKE_CONF="${QMAKE_CONF_DIR}/qmake.conf"
+  QMAKE_CONF_DIR=qtbase/mkspecs/devices/linux-libreelec-g++
+  QMAKE_CONF=${QMAKE_CONF_DIR}/qmake.conf
 
   cd ..
   mkdir -p ${QMAKE_CONF_DIR}
