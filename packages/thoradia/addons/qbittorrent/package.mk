@@ -1,13 +1,11 @@
 PKG_NAME="qbittorrent"
-PKG_VERSION="4.2.1"
-PKG_SHA256="723e68807ff0faffda68ed95b515d31abd23a667d949bddf0021ad81f7400a1f"
-PKG_REV="27"
+PKG_VERSION="4.2.5"
+PKG_SHA256="1dac52d6fe4b0c44dba04fcfc41f519c57a69cb30580255edca95c87053a4324"
+PKG_REV="29"
 PKG_LICENSE="GPLv2"
 PKG_SITE="http://www.qbittorrent.org/"
 PKG_URL="https://github.com/qbittorrent/qBittorrent/archive/release-${PKG_VERSION}.tar.gz"
-PKG_SOURCE_DIR="qBittorrent-release-${PKG_VERSION}"
 PKG_DEPENDS_TARGET="toolchain libtorrent-rasterbar qt-everywhere"
-PKG_TOOLCHAIN="configure"
 
 PKG_IS_ADDON="yes"
 PKG_ADDON_NAME="qBittorrent"
@@ -18,24 +16,12 @@ PKG_LONGDESC="${PKG_ADDON_NAME} (${PKG_VERSION}) is an efficient feature complet
 PKG_ADDON_TYPE="xbmc.service"
 PKG_DISCLAIMER="Keep it legal and carry on"
 
-PKG_CONFIGURE_OPTS_TARGET="--disable-gui \
-                           --prefix=${SYSROOT_PREFIX}/usr \
-                           --with-boost=${SYSROOT_PREFIX}/usr"
-
-post_configure_target() {
-  sed -i "s\ /usr/plugins\ ${SYSROOT_PREFIX}/usr/plugins\g" src/Makefile
-}
-
-post_make_target() {
-  ${STRIP} ${PKG_BUILD}/.${TARGET_NAME}/src/qbittorrent-nox
-}
+PKG_CMAKE_OPTS_TARGET="-DBoost_USE_STATIC_LIBS=ON \
+                       -DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets=True \
+                       -DCMAKE_CXX_STANDARD=14"
 
 addon() {
   mkdir -p ${ADDON_BUILD}/${PKG_ADDON_ID}/bin
-    cp -P ${PKG_BUILD}/.${TARGET_NAME}/src/qbittorrent-nox \
-          ${ADDON_BUILD}/${PKG_ADDON_ID}/bin/
-
-  mkdir -p ${ADDON_BUILD}/${PKG_ADDON_ID}/lib
-    cp -L $(get_build_dir libtorrent-rasterbar)/.install_pkg/usr/lib/libtorrent-rasterbar.so.?? \
-          ${ADDON_BUILD}/${PKG_ADDON_ID}/lib/
+    cp -P ${PKG_BUILD}/.install_pkg/usr/bin/qbittorrent-nox \
+          ${ADDON_BUILD}/${PKG_ADDON_ID}/bin
 }
