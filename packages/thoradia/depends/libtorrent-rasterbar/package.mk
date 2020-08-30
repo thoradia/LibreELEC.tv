@@ -1,18 +1,15 @@
 PKG_NAME="libtorrent-rasterbar"
-PKG_VERSION="1_2_3"
-PKG_SHA256="6381020213c5138adf8bcf9f5bf04ab1521d563cd8a9fa1156f1590b35ccc9d4"
+PKG_VERSION="1.2.9"
+PKG_SHA256="6c986225a1c2d9eb23c5b1ac0692d83208b721a05c968102a17ee3fde01bd709"
 PKG_LICENSE="https://github.com/arvidn/libtorrent/blob/master/LICENSE"
 PKG_SITE="http://libtorrent.org/"
-PKG_URL="https://github.com/arvidn/libtorrent/archive/libtorrent-$PKG_VERSION.tar.gz"
+PKG_URL="https://github.com/arvidn/libtorrent/releases/download/libtorrent-${PKG_VERSION}/libtorrent-rasterbar-${PKG_VERSION}.tar.gz"
 PKG_DEPENDS_TARGET="toolchain boost libiconv openssl"
 PKG_LONGDESC="An efficient feature complete C++ bittorrent implementation"
-PKG_TOOLCHAIN="autotools"
 
-PKG_CONFIGURE_OPTS_TARGET="--enable-python-binding \
-                           --with-boost-libdir=${SYSROOT_PREFIX}/usr/lib \
-                           --with-libiconv"
-
-post_unpack() {
-  mkdir -p ${PKG_BUILD}/build-aux/
-    touch ${PKG_BUILD}/build-aux/config.rpath
-}
+PKG_BUILD_FLAGS="+pic"
+PKG_CMAKE_OPTS_TARGET="-Dboost-python-module-name=python \
+                       -DBoost_USE_STATIC_LIBS=ON \
+                       -DBUILD_SHARED_LIBS=OFF \
+                       -Dpython-bindings=ON \
+                       -DCMAKE_CXX_STANDARD=14"
