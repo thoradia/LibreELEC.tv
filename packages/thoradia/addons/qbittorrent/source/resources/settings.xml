@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
    <category   label="30000">
-      <setting label="30001" type="number" id="qb_port" default="8880" />
-
-   </category>
-   <category   label="30002">
-      <setting label="30003" type="slider" id="qb_nice" default="10" range="0,1,19" option="int" />
+      <setting label="30001" type="slider" id="nice" default="10" range="0,1,19" option="int" />
    </category>
 </settings>
