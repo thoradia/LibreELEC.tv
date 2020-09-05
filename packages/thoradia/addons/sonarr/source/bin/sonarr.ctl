@@ -33,7 +33,7 @@ use_mono() {
 }
 
 use_netcore() {
-  export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
+  :
 }
 
 export TMPDIR=${ADDON_DIR}

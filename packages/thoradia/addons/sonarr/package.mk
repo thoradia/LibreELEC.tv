@@ -1,6 +1,6 @@
 PKG_NAME="sonarr"
 PKG_VERSION="bootstrap"
-PKG_REV="39"
+PKG_REV="40"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://sonarr.tv/"
 PKG_DEPENDS_TARGET="toolchain"
