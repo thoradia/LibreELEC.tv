@@ -43,7 +43,6 @@ use_mono() {
 use_netcore() {
   _cmd=${_lib}/Radarr
   chmod +x ${_cmd}
-  export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
 }
 
 export TMPDIR=${ADDON_DIR}
