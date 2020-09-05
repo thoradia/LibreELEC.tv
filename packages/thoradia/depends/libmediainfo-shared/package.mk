@@ -1,6 +1,6 @@
 PKG_NAME="libmediainfo-shared"
-PKG_VERSION="20.03"
-PKG_SHA256="2a1da41b94aa5380c537f198f3c797fd9ef23891709e935143e4535099437311"
+PKG_VERSION="20.08"
+PKG_SHA256="e52f1acb520bb6f3af891512d2ac91536a093ced5ecf04b204bb9a1314c0589c"
 PKG_LICENSE="GPL"
 PKG_SITE="http://mediaarea.net/en/MediaInfo/Download/Source"
 PKG_URL="https://github.com/MediaArea/MediaInfoLib/archive/v${PKG_VERSION}.tar.gz"
