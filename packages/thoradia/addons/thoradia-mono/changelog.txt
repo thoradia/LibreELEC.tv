@@ -1,1 +1,2 @@
-- libmediainfo-shared version 20.08
+- icu4c version 67-1
+  libmediainfo-shared version 20.08
