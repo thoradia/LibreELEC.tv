@@ -1,6 +1,6 @@
 PKG_NAME="qt-everywhere"
-PKG_VERSION="5.15.0"
-PKG_SHA256="22b63d7a7a45183865cc4141124f12b673e7a17b1fe2b91e433f6547c5d548c3"
+PKG_VERSION="5.15.1"
+PKG_SHA256="44da876057e21e1be42de31facd99be7d5f9f07893e1ea762359bcee0ef64ee9"
 PKG_LICENSE="GPL"
 PKG_SITE="http://qt-project.org"
 PKG_URL="http://download.qt.io/archive/qt/5.15/${PKG_VERSION}/single/${PKG_NAME}-src-${PKG_VERSION}.tar.xz"
