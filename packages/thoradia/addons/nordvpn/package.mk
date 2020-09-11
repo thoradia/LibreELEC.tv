@@ -1,6 +1,6 @@
 PKG_NAME="nordvpn"
 PKG_VERSION="3.8.4"
-PKG_REV="5"
+PKG_REV="6"
 PKG_LICENSE="Prop."
 PKG_SITE="https://nordvpn.com/"
 PKG_DEPENDS_TARGET="toolchain iproute2 ipset libxslt sysctl"
@@ -41,15 +41,16 @@ make_target() {
 
 addon() {
   mkdir -p ${ADDON_BUILD}/${PKG_ADDON_ID}/bin
-    cp -PR ${PKG_BUILD}/usr/bin/* \
-           ${PKG_BUILD}/usr/sbin/* \
-           $(get_build_dir libxslt)/.${TARGET_NAME}/xsltproc/xsltproc \
+    cp -PR ${PKG_BUILD}/usr/bin/nordvpn \
+           ${ADDON_BUILD}/${PKG_ADDON_ID}/bin/_nordvpn
+    cp -PR ${PKG_BUILD}/usr/sbin/nordvpnd \
            ${ADDON_BUILD}/${PKG_ADDON_ID}/bin
     cp -PR ${PKG_BUILD}/var/lib/nordvpn \
-           ${ADDON_BUILD}/${PKG_ADDON_ID}
+           ${ADDON_BUILD}/${PKG_ADDON_ID}/
   mkdir -p ${ADDON_BUILD}/${PKG_ADDON_ID}/bins
     cp -PR $(get_install_dir iproute2)/sbin/ip \
            $(get_install_dir ipset)/usr/sbin/ipset \
            $(get_build_dir sysctl)/.${TARGET_NAME}/sysctl \
+           $(get_build_dir libxslt)/.${TARGET_NAME}/xsltproc/xsltproc \
            ${ADDON_BUILD}/${PKG_ADDON_ID}/bins
 }
