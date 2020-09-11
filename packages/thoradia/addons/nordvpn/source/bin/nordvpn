@@ -1,0 +1,6 @@
+#!/bin/sh
+. /etc/profile
+oe_setup_addon service.nordvpn
+
+HOME=${ADDON_HOME} \
+${ADDON_DIR}/bin/_nordvpn "${@}"
