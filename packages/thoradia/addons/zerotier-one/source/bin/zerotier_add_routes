@@ -1,0 +1,18 @@
+#!/bin/sh
+. /etc/profile
+oe_setup_addon service.zerotier-one
+
+_default="$(ip route | grep default)"
+if [ -z "${_default}" ]; then
+  echo "No default route"
+  exit
+fi
+
+for _peer in $peers; do
+  _addresses="$(getent ahosts ${_peer} | awk '!_[$1]++ {print $1}')"
+  for _address in ${_addresses}; do
+    _route="ip route replace ${_default//default/$_address}"
+    echo "${_route}"
+    ${_route}
+  done
+done
