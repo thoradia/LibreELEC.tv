@@ -6,6 +6,7 @@ Wants=basic.target network-online.target
 [Service]
 SyslogIdentifier=%N
 ExecStart=/bin/sh /storage/.kodi/addons/%N/bin/nordvpnd.ctl
+ExecStartPost=-/bin/sh /storage/.kodi/addons/%N/bin/nordvpn_whitelist_subnets
 KillMode=process
 NonBlocking=true
 Restart=on-failure

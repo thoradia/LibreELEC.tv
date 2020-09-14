@@ -1,0 +1,11 @@
+#!/bin/sh
+. /etc/profile
+oe_setup_addon service.nordvpn
+
+sleep 2
+
+for _device in $(ls -l /sys/class/net | awk -F '/' '$4=="platform" {print $NF}'); do
+  for _subnet in $(ip route list dev ${_device} scope link | awk '{print ($1~"/") ? $1 : $1"/32"}'); do
+    nordvpn whitelist add subnet ${_subnet}
+  done
+done
