@@ -5,6 +5,7 @@ Wants=network-online.target
 
 [Service]
 SyslogIdentifier=%N
+ExecStartPre=-/bin/sh /storage/.kodi/addons/service.zerotier-one/bin/zerotier_add_routes
 ExecStart=/bin/sh /storage/.kodi/addons/service.zerotier-one/bin/zerotier-one.ctl
 Restart=always
 

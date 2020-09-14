@@ -1,0 +1,29 @@
+From f2734dc3d8acd97151a25f963fcf71fad5a84da2 Mon Sep 17 00:00:00 2001
+From: thoradia <22841905+thoradia@users.noreply.github.com>
+Date: Tue, 8 Sep 2020 01:34:38 +0200
+Subject: [PATCH] add ports to addresses specified by the bind setting
+
+---
+ osdep/Binder.hpp | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/osdep/Binder.hpp b/osdep/Binder.hpp
+index 660e6f0c3..a6c668f85 100644
+--- a/osdep/Binder.hpp
++++ b/osdep/Binder.hpp
+@@ -316,8 +316,13 @@ class Binder
+ 
+ #endif
+ 		} else {
+-			for(std::vector<InetAddress>::const_iterator i(explicitBind.begin());i!=explicitBind.end();++i)
+-				localIfAddrs.insert(std::pair<InetAddress,std::string>(*i,std::string()));
++			for(std::vector<InetAddress>::const_iterator i(explicitBind.begin());i!=explicitBind.end();++i) {
++				InetAddress ip = InetAddress(*i);
++				for(int x=0;x<(int)portCount;++x) {
++					ip.setPort(ports[x]);
++					localIfAddrs.insert(std::pair<InetAddress,std::string>(ip,std::string()));
++				}
++			}
+ 		}
+ 
+ 		// Default to binding to wildcard if we can't enumerate addresses

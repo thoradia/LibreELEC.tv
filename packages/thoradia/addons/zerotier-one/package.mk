@@ -1,7 +1,7 @@
 PKG_NAME="zerotier-one"
 PKG_VERSION="1.4.6"
 PKG_SHA256="d1a0eeb03acfa446f67adf5901902d17de14b4648c21e160024acf476e3d4fba"
-PKG_REV="1"
+PKG_REV="2"
 PKG_LICENSE="BSL1.1"
 PKG_SITE="https://www.zerotier.com/"
 PKG_URL="https://github.com/zerotier/ZeroTierOne/archive/${PKG_VERSION}.tar.gz"

@@ -1,0 +1,5 @@
+#!/bin/sh
+. /etc/profile
+oe_setup_addon service.zerotier-one
+
+zerotier-one.ctl -q "${@}"
