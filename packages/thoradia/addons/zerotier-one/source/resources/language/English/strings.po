@@ -6,5 +6,9 @@ msgid "Configuration"
 msgstr ""
 
 msgctxt "#30001"
+msgid "Add routes to peer(s)"
+msgstr ""
+
+msgctxt "#30002"
 msgid "Priority (nice, 0=max, 19=min)"
 msgstr ""
