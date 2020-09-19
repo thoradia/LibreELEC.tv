@@ -1,6 +1,6 @@
 PKG_NAME="nordvpn"
 PKG_VERSION="3.8.4"
-PKG_REV="7"
+PKG_REV="8"
 PKG_LICENSE="Prop."
 PKG_SITE="https://nordvpn.com/"
 PKG_DEPENDS_TARGET="toolchain iproute2 ipset libxslt sysctl"
@@ -8,11 +8,12 @@ PKG_TOOLCHAIN="manual"
 
 PKG_IS_ADDON="yes"
 PKG_ADDON_NAME="NordVPN"
-PKG_ADDON_TYPE="xbmc.service"
+PKG_ADDON_TYPE="xbmc.service.script"
+PKG_ADDON_PROVIDES="executable"
 PKG_MAINTAINER="thoradia"
 PKG_SECTION="service"
 PKG_SHORTDESC="${PKG_ADDON_NAME}: protect your privacy online and access media content with no regional restrictions"
-PKG_LONGDESC="${PKG_ADDON_NAME} (${PKG_VERSION}) protect your privacy online and access media content with no regional restrictions, strong encryption and no-log policy with 3000+ servers in 60+ countries."
+PKG_LONGDESC="${PKG_ADDON_NAME} (${PKG_VERSION}) protects your privacy online and access media content with no regional restrictions, strong encryption and no-log policy with 3000+ servers in 60+ countries."
 PKG_DISCLAIMER="Keep it legal and carry on"
 
 case ${ARCH} in
