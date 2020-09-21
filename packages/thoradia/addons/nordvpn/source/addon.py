@@ -1,4 +1,4 @@
-import os.path
+import os
 import subprocess
 import xbmcaddon
 import xbmcgui
@@ -13,74 +13,58 @@ class NordVPN():
 
     def __init__(self, command):
         self.command = NORDVPN + ' ' + command
-        self.header = '{} - nordvpn {}'.format(ADDON_NAME, command)
         try:
-            self.output = subprocess.check_output(self.command.split())
+            self.text = subprocess.check_output(self.command.split())
             self.code = 0
         except subprocess.CalledProcessError as error:
-            self.output = error.output
+            self.text = error.output
             self.code = error.returncode
-        self.output = self.output[self.output.rfind('\r') + 1:-1]
-
-    def select(self, header):
-        list = self.output.replace(',', '').split()
-        if len(list) == 1:
-            return ''
-        list.insert(0, '')
-        index = xbmcgui.Dialog().select(header, list)
-        if index < 0:
-            return None
-        return list[index]
-
-    def show(self, dialog):
-        dialog(self.header, self.output)
-
-    def show_long(self):
-        self.show(xbmcgui.Dialog().textviewer)
-
-    def show_short(self):
-        self.show(xbmcgui.Dialog().ok)
+        self.text = self.text[self.text.rfind('\r') + 1:-1]
 
 
 def ui_account():
-    NordVPN('account').show_short()
-
-
-def ui_set_autoconnect():
-    states = ['disabled', 'enabled']
-    state = xbmcgui.Dialog().select('autoconnect', states)
-    if state < 0:
-        return
-    if state == 0:
-        country = ''
-    else:
-        country = NordVPN('countries').select('country')
-        if country is None:
-            return
-    NordVPN('set autoconnect {} {}'.format(
-        states[state], country)).show_short()
+    ui_show('account')
 
 
 def ui_connect():
-    country = NordVPN('countries').select('country')
+    country = ui_select_country()
     if country is None:
         return
-    NordVPN('connect ' + country)
-    ui_status()
+    NordVPN('connect {}'.format(country))
+    ui_information()
 
 
 def ui_disconnect():
     NordVPN('disconnect')
-    ui_status()
+    ui_information()
+
+
+def ui_get_header(text):
+    return '{} - {}'.format(ADDON_NAME, text)
+
+
+def ui_information():
+    xbmcgui.Dialog().textviewer(
+        ui_get_header('Information'),
+        (os.linesep * 2).join((
+            NordVPN(command).text for command in (
+                'status',
+                'settings',
+                '--version',
+            ))))
 
 
 def ui_login():
-    username = xbmcgui.Dialog().input('email/username',
-                                      defaultt=ADDON.getSetting('username'))
+    username = xbmcgui.Dialog().input(
+        ui_get_header('Enter email/username:'),
+        defaultt=ADDON.getSetting('username')
+    )
     if username == '':
         return
-    password = xbmcgui.Dialog().input('password',
-                                      option=xbmcgui.ALPHANUM_HIDE_INPUT)
+    password = xbmcgui.Dialog().input(
+        ui_get_header('Enter password:'),
+        option=xbmcgui.ALPHANUM_HIDE_INPUT
+    )
     if password == '':
         return
     if NordVPN('login -u {} -p {}'.format(username, password)).code == 0:
@@ -89,44 +73,66 @@ def ui_login():
 
 
 def ui_logout():
-    NordVPN('logout').show_short()
+    NordVPN('logout')
+    ui_account()
 
 
-def ui_settings():
-    NordVPN('settings').show_long()
+def ui_select_country():
+    countries = NordVPN('countries').text.replace(',', '').split()
+    index = xbmcgui.Dialog().select(ui_get_header('Select a country:'), countries)
+    if index < 0:
+        return None
+    return countries[index]
 
 
-def ui_status():
-    NordVPN('status').show_long()
+def ui_set_autoconnect():
+    states = ['disable', 'enable']
+    state = xbmcgui.Dialog().select('Disable/enable autoconnect:', states)
+    if state < 0:
+        return
+    if state == 0:
+        country = ''
+    else:
+        country = ui_select_country()
+        if country is None:
+            return
+    ui_show('set autoconnect {} {}'.format(state, country))
 
 
 def ui_set_technology():
     technologies = ['NordLynx', 'OpenVPN']
-    technology = xbmcgui.Dialog().select('technology', technologies)
+    technology = xbmcgui.Dialog().select('Select a technology:', technologies)
     if technology < 0:
         return
-    NordVPN('set technology ' + technologies[technology]).show_short()
+    ui_show('set technology {}'.format(technologies[technology]))
+
+
+def ui_show(command):
+    xbmcgui.Dialog().ok(ui_get_header(command), NordVPN(command).text)
 
 
 def ui_menu():
     while True:
         status = NordVPN('status')
         if status.code:
-            xbmcgui.Dialog().ok('Error', status.output)
+            xbmcgui.Dialog().ok('Error', status.text)
             break
-        if len(status.output.splitlines()) > 1 or len(NordVPN('account').output.splitlines()) > 1:
-            menu = [['connect', ui_connect],
-                    ['status', ui_status],
-                    ['disconnect', ui_disconnect],
-                    ['settings', ui_settings],
-                    ['autoconnect', ui_set_autoconnect],
-                    ['technology', ui_set_technology],
-                    ['account', ui_account],
-                    ['logout', ui_logout]]
+        if len(status.text.splitlines()) > 1 or len(NordVPN('account').text.splitlines()) > 1:
+            menu = [
+                ['Information', ui_information],
+                ['Connect', ui_connect],
+                ['Disconnect', ui_disconnect],
+                ['Set autoconnect', ui_set_autoconnect],
+                ['Set technology', ui_set_technology],
+                ['Account', ui_account],
+                ['Logout', ui_logout],
+            ]
         else:
-            menu = [['login', ui_login]]
+            menu = [
+                ['Login', ui_login],
+            ]
         index = xbmcgui.Dialog().select(
-            ADDON_NAME, [row[0] for row in menu])
+            ui_get_header('Select a function:'), [item[0] for item in menu])
         if index < 0:
             break
         menu[index][1]()
