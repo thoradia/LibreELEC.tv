@@ -1,7 +1,0 @@
-#!/bin/sh
-
-. /etc/profile
-oe_setup_addon service.radarr
-
-nice -n "$rr_nice" \
-mono "$ADDON_DIR/radarr/Radarr.exe" -data="$ADDON_HOME" -nobrowser
