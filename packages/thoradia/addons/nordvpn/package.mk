@@ -1,6 +1,6 @@
 PKG_NAME="nordvpn"
-PKG_VERSION="3.8.4"
-PKG_REV="7"
+PKG_VERSION="3.8.5"
+PKG_REV="9"
 PKG_LICENSE="Prop."
 PKG_SITE="https://nordvpn.com/"
 PKG_DEPENDS_TARGET="toolchain iproute2 ipset libxslt sysctl"
@@ -8,21 +8,22 @@ PKG_TOOLCHAIN="manual"
 
 PKG_IS_ADDON="yes"
 PKG_ADDON_NAME="NordVPN"
-PKG_ADDON_TYPE="xbmc.service"
+PKG_ADDON_TYPE="xbmc.service.script"
+PKG_ADDON_PROVIDES="executable"
 PKG_MAINTAINER="thoradia"
 PKG_SECTION="service"
 PKG_SHORTDESC="${PKG_ADDON_NAME}: protect your privacy online and access media content with no regional restrictions"
-PKG_LONGDESC="${PKG_ADDON_NAME} (${PKG_VERSION}) protect your privacy online and access media content with no regional restrictions, strong encryption and no-log policy with 3000+ servers in 60+ countries."
+PKG_LONGDESC="${PKG_ADDON_NAME} (${PKG_VERSION}) protects your privacy online and access media content with no regional restrictions, strong encryption and no-log policy with 3000+ servers in 60+ countries."
 PKG_DISCLAIMER="Keep it legal and carry on"
 
 case ${ARCH} in
   arm)
     arch="armhf"
-    PKG_SHA256="24acc23dc01a0c796795638f57198aec8ab4234f45c5769abc5fd37b2ea6a606"
+    PKG_SHA256="195ceac769638559771684d6bd1edbb3773b81fb397bf1d5c815e1c90de990b5"
     ;;
   x86_64)
     arch="amd64"
-    PKG_SHA256="309e837fc07178c5cfefdcd645082e1ef5ce5604071f73b1a78986e9cbb08696"
+    PKG_SHA256="a3f9a0017a3e42e4dbc21372f79bff4eb30615bdd66998415f032e592e6eba4e"
     ;;
 esac
 
