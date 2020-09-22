@@ -5,9 +5,8 @@ Wants=multi-user.target network-online.target tools.mono.service
 
 [Service]
 SyslogIdentifier=%N
-ExecStart=/bin/sh /storage/.kodi/addons/service.radarr/bin/radarr.ctl -nobrowser
+ExecStart=/bin/sh /storage/.kodi/addons/service.radarr/bin/radarr.ctl
 Restart=always
-MemoryHigh=100M
 
 [Install]
 WantedBy=multi-user.target
