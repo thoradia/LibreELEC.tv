@@ -1,0 +1,12 @@
+diff -Naur sabnzbd-3.0.2/requirements.txt sabnzbd-3.0.2-feedparser/requirements.txt
+--- sabnzbd-3.0.2/requirements.txt	2020-08-30 20:58:31.000000000 +0200
++++ sabnzbd-3.0.2-feedparser/requirements.txt	2020-09-23 08:56:23.855934617 +0200
+@@ -1,7 +1,7 @@
+ sabyenc3>=4.0.0
+ cheetah3>=3.0.0
+ cryptography
+-feedparser
++feedparser<6.0.0
+ configobj
+ cheroot<8.4.3
+ cherrypy

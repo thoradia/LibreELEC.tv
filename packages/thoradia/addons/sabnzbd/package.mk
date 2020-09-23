@@ -1,7 +1,7 @@
 PKG_NAME="sabnzbd"
 PKG_VERSION="3.0.2"
 PKG_SHA256="8dd706e7dc0b880c6566c601555ed16e8ba4d9ac16c8152edce03ad17a9dc1be"
-PKG_REV="40"
+PKG_REV="41"
 PKG_LICENSE="GPLv2"
 PKG_SITE="https://sabnzbd.org/"
 PKG_URL="https://github.com/sabnzbd/$PKG_NAME/archive/$PKG_VERSION.tar.gz"
@@ -30,8 +30,7 @@ make_target() {
   python3 -m crossenv ${SYSROOT_PREFIX}/usr/bin/python3 .crossenv
   . .crossenv/bin/activate
   pip install --requirement requirements.txt --target .
-  python3 -m compileall *
-  find . -name \*.py -type f -exec rm -f {} +
+  python_compile .
   mkdir -p ${INSTALL}
   cp -r * ${INSTALL}
 }
