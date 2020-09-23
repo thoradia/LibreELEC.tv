@@ -1,6 +1,6 @@
 PKG_NAME="thoradia"
 PKG_VERSION="0"
-PKG_REV="24"
+PKG_REV="25"
 PKG_SITE="https://github.com/thoradia/thoradia"
 PKG_DEPENDS_TARGET="toolchain"
 PKG_TOOLCHAIN="manual"
