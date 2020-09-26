@@ -25,7 +25,7 @@ select_runtime() {
       use_mono
       ;;
     *.x86_64)
-      download "runtime=netcore&arch=x86"
+      download "runtime=netcore&arch=x64"
       use_netcore
       ;;
     *)
