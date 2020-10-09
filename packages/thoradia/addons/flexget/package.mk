@@ -1,5 +1,5 @@
 PKG_NAME="flexget"
-PKG_VERSION="3.1.71"
+PKG_VERSION="3.1.72"
 PKG_REV="15"
 PKG_LICENSE="MIT"
 PKG_SITE="https://flexget.com"
