@@ -1,5 +1,5 @@
 PKG_NAME="thoradia-mono"
-PKG_REV="15"
+PKG_REV="16"
 PKG_DEPENDS_TARGET="toolchain icu4c libmediainfo-shared"
 
 PKG_IS_ADDON="yes"
