@@ -1,7 +1,0 @@
-#!/bin/sh
-
-. /etc/profile
-oe_setup_addon service.lidarr
-
-nice -n "$lr_nice" \
-mono "$ADDON_DIR/lidarr/Lidarr.exe" -data="$ADDON_HOME" -nobrowser
