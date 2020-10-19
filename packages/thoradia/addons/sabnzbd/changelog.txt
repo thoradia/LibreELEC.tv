@@ -1,1 +1,1 @@
-- SABnzbd version 3.0.2
+- SABnzbd version 3.1.0
