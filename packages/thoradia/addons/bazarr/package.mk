@@ -27,6 +27,7 @@ make_target() {
   python -m crossenv ${SYSROOT_PREFIX}/usr/bin/python3 .crossenv
   . .crossenv/bin/activate
   pip install --target=libs lxml numpy
+  python_compile ./libs
   mkdir -p ${INSTALL}
   cp -r * ${INSTALL}
 }
