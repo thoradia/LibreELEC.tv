@@ -1,5 +1,5 @@
 PKG_NAME="crossenv"
-PKG_VERSION="0.7"
+PKG_VERSION="1.0"
 PKG_LICENSE="MIT"
 PKG_SITE="https://github.com/benfogle/crossenv"
 PKG_DEPENDS_HOST="toolchain Python3"
