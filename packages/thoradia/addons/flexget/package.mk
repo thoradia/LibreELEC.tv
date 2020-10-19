@@ -1,6 +1,6 @@
 PKG_NAME="flexget"
-PKG_VERSION="3.1.72"
-PKG_REV="15"
+PKG_VERSION="3.1.77"
+PKG_REV="16"
 PKG_LICENSE="MIT"
 PKG_SITE="https://flexget.com"
 PKG_DEPENDS_TARGET="toolchain crossenv:host libyaml"
