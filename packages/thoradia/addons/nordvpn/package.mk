@@ -1,6 +1,6 @@
 PKG_NAME="nordvpn"
 PKG_VERSION="3.8.5"
-PKG_REV="9"
+PKG_REV="10"
 PKG_LICENSE="Prop."
 PKG_SITE="https://nordvpn.com/"
 PKG_DEPENDS_TARGET="toolchain iproute2 ipset libxslt sysctl"
