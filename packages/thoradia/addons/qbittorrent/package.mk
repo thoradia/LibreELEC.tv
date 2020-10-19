@@ -1,7 +1,7 @@
 PKG_NAME="qbittorrent"
-PKG_VERSION="4.2.5"
-PKG_SHA256="1dac52d6fe4b0c44dba04fcfc41f519c57a69cb30580255edca95c87053a4324"
-PKG_REV="31"
+PKG_VERSION="4.3.0"
+PKG_SHA256="d4667c07cf75107ade606714f44de6e7fc2049d2b08c889ce21a93f95e9573a1"
+PKG_REV="32"
 PKG_LICENSE="GPLv2"
 PKG_SITE="http://www.qbittorrent.org/"
 PKG_URL="https://github.com/qbittorrent/qBittorrent/archive/release-${PKG_VERSION}.tar.gz"
@@ -17,7 +17,8 @@ PKG_ADDON_TYPE="xbmc.service"
 PKG_DISCLAIMER="Keep it legal and carry on"
 
 PKG_CMAKE_OPTS_TARGET="-DBoost_USE_STATIC_LIBS=ON \
-                       -DCMAKE_DISABLE_FIND_PACKAGE_Qt5Widgets=True"
+                       -DDBUS:BOOL=OFF \
+                       -DGUI:BOOL=OFF"
 
 addon() {
   mkdir -p ${ADDON_BUILD}/${PKG_ADDON_ID}/bin
