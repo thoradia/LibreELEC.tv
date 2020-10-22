@@ -1,1 +1,1 @@
-- qBittorent version 4.3.0
+- qBittorent version 4.3.0.1
