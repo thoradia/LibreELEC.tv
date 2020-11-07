@@ -1,6 +1,6 @@
 PKG_NAME="ipset"
-PKG_VERSION="7.6"
-PKG_SHA256="0e7d44caa9c153d96a9b5f12644fbe35a632537a5a7f653792b72e53d9d5c2db"
+PKG_VERSION="7.7"
+PKG_SHA256="45a50d581ba4d6688081e2b0328245914ba9807f8ec682c1aa619040d1316c32"
 PKG_LICENSE="GPLv2"
 PKG_SITE="https://ipset.netfilter.org/"
 PKG_URL="https://ipset.netfilter.org/ipset-${PKG_VERSION}.tar.bz2"
