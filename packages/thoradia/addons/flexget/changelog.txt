@@ -1,1 +1,1 @@
-- FlexGet version 3.1.80
+- FlexGet version 3.1.84
