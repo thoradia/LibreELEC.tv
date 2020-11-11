@@ -1,7 +1,7 @@
 PKG_NAME="bazarr"
-PKG_VERSION="0.9.0.5"
-PKG_SHA256="a5351d52c429decc4c52c0e93848fde1f432ffb91309ec4e9688b838e1c3a8d6"
-PKG_REV="20"
+PKG_VERSION="0.9.0.6"
+PKG_SHA256="1b8ad7fa94ccf5af8964190699fdba5b9a1f1c107cd95d829055b1e151d4fbd5"
+PKG_REV="21"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://github.com/morpheus65535/bazarr"
 PKG_URL="https://github.com/morpheus65535/bazarr/archive/v${PKG_VERSION}.tar.gz"
@@ -26,7 +26,7 @@ make_target() {
   rm -fr bin screenshot
   python -m crossenv ${SYSROOT_PREFIX}/usr/bin/python3 .crossenv
   . .crossenv/bin/activate
-  pip install --target=libs lxml numpy
+  pip install --target=libs lxml numpy webrtcvad-wheels
   python_compile ./libs
   mkdir -p ${INSTALL}
   cp -r * ${INSTALL}
