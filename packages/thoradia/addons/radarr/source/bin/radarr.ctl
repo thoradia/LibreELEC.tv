@@ -6,7 +6,7 @@ oe_setup_addon service.radarr
 download() {
   _dst=${TMPDIR}/Radarr
   _lib=${ADDON_DIR}/libs
-  _url="https://radarr.servarr.com/v1/update/aphrodite/updatefile?os=linux&${1}"
+  _url="https://radarr.servarr.com/v1/update/nightly/updatefile?os=linux&${1}"
   if [ -e ${_lib} ]; then
     return
   fi
