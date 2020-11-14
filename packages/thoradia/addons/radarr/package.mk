@@ -1,6 +1,6 @@
 PKG_NAME="radarr"
 PKG_VERSION="bootstrap"
-PKG_REV="35"
+PKG_REV="36"
 PKG_LICENSE="GPLv3"
 PKG_SITE="https://github.com/Radarr/Radarr"
 PKG_DEPENDS_TARGET="toolchain"
