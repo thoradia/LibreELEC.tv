@@ -1,2 +1,2 @@
-- icu4c version 67-1
+- icu version 68.1
   libmediainfo-shared version 20.09
