@@ -1,6 +1,6 @@
 PKG_NAME="thoradia-mono"
-PKG_REV="16"
-PKG_DEPENDS_TARGET="toolchain icu4c libmediainfo-shared"
+PKG_REV="17"
+PKG_DEPENDS_TARGET="toolchain icu libmediainfo-shared"
 
 PKG_IS_ADDON="yes"
 PKG_ADDON_NAME="Thoradia .Net and Mono Tools"
@@ -13,7 +13,7 @@ PKG_DISCLAIMER="Keep it legal and carry on"
 
 addon() {
   mkdir -p ${ADDON_BUILD}/${PKG_ADDON_ID}/lib
-    cp -L $(get_install_dir icu4c)/usr/lib/lib*.so.?? \
+    cp -L $(get_install_dir icu)/usr/lib/lib*.so.?? \
           $(get_build_dir libmediainfo-shared)/Project/GNU/Library/.libs/libmediainfo.so.0 \
           ${ADDON_BUILD}/${PKG_ADDON_ID}/lib/
 }
