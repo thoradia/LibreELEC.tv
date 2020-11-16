@@ -1,9 +1,9 @@
 PKG_NAME="libtorrent-rasterbar"
-PKG_VERSION="2.0.0"
-PKG_SHA256="33d802ea35bbc13daa70dc621c15553a0b7393961e29c9211fc239de821d4e98"
+PKG_VERSION="2.0.1"
+PKG_SHA256="7b39599bf602bf2f208f8f05bf2327576356a3c192175b3a4603262ede42ffd7"
 PKG_LICENSE="https://github.com/arvidn/libtorrent/blob/master/LICENSE"
 PKG_SITE="http://libtorrent.org/"
-PKG_URL="https://github.com/arvidn/libtorrent/releases/download/2.0/libtorrent-rasterbar-${PKG_VERSION}.tar.gz"
+PKG_URL="https://github.com/arvidn/libtorrent/releases/download/v${PKG_VERSION}/libtorrent-rasterbar-${PKG_VERSION}.tar.gz"
 PKG_DEPENDS_TARGET="toolchain boost openssl"
 PKG_LONGDESC="An efficient feature complete C++ bittorrent implementation"
 
