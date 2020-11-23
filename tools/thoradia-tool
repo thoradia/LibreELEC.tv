@@ -24,8 +24,8 @@ build_projects() {
   if [ -n "${PROJECT}" ]; then
     build_project
   else
-    ARCH='arm'    DEVICE='RPi2'  PROJECT='RPi'     build_project
     ARCH='arm'    DEVICE='RPi4'  PROJECT='RPi'     build_project
+    ARCH='arm'    DEVICE='RPi2'  PROJECT='RPi'     build_project
     ARCH='x86_64'                PROJECT='Generic' build_project
     ARCH='arm'    DEVICE='ARMv7' PROJECT='ARM'     build_project
     ARCH='arm'    DEVICE='ARMv8' PROJECT='ARM'     build_project
