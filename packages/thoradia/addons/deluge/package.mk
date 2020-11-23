@@ -28,8 +28,7 @@ make_target() {
   echo ${PKG_VERSION} > RELEASE-VERSION
   python3 -m crossenv ${SYSROOT_PREFIX}/usr/bin/python3 .crossenv
   . .crossenv/bin/activate
-  pip install --target=${INSTALL} .
-  find ${INSTALL} -name \*.py -type f -exec rm -f {} +
+  pip install --no-compile --target=${INSTALL} .
 }
 
 addon() {
