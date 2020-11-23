@@ -29,8 +29,7 @@ make_target() {
   rm -fr linux osx win
   python3 -m crossenv ${SYSROOT_PREFIX}/usr/bin/python3 .crossenv
   . .crossenv/bin/activate
-  pip install --requirement requirements.txt --target .
-  python_compile .
+  pip install --no-compile --requirement requirements.txt --target .
   mkdir -p ${INSTALL}
   cp -r * ${INSTALL}
 }

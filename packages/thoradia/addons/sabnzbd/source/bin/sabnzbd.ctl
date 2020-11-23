@@ -4,4 +4,4 @@ oe_setup_addon service.sabnzbd
 
 PYTHONPATH=${ADDON_DIR}/libs \
 exec nice -n "${nice:-10}" \
-python ${ADDON_DIR}/libs/SABnzbd.pyc --config-file $ADDON_HOME "${@}"
+python ${ADDON_DIR}/libs/SABnzbd.py --config-file $ADDON_HOME "${@}"
