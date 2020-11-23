@@ -19,7 +19,6 @@ PKG_PY_DISABLED_MODULES="_tkinter nis gdbm bsddb ossaudiodev"
 
 PKG_CONFIGURE_OPTS_HOST="ac_cv_prog_HAS_HG=/bin/false
                          ac_cv_prog_SVNVERSION=/bin/false
-                         --disable-pyc-build
                          --disable-ossaudiodev
                          --disable-sqlite3
                          --disable-codecs-cjk
@@ -57,7 +56,6 @@ PKG_CONFIGURE_OPTS_TARGET="ac_cv_prog_HAS_HG=/bin/false
                            ac_cv_buggy_getaddrinfo=no
                            ac_cv_header_bluetooth_bluetooth_h=no
                            ac_cv_header_bluetooth_h=no
-                           --disable-pyc-build
                            --disable-ossaudiodev
                            --enable-sqlite3
                            --disable-codecs-cjk
