@@ -26,8 +26,7 @@ make_target() {
   rm -fr bin screenshot
   python -m crossenv ${SYSROOT_PREFIX}/usr/bin/python3 .crossenv
   . .crossenv/bin/activate
-  pip install --target=libs lxml numpy webrtcvad-wheels
-  python_compile ./libs
+  pip install --no-compile --target=libs lxml numpy webrtcvad-wheels
   mkdir -p ${INSTALL}
   cp -r * ${INSTALL}
 }
