@@ -1,1 +1,1 @@
-- nordvpn version 3.8.6
+- nordvpn version 3.8.7
