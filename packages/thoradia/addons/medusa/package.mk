@@ -1,9 +1,9 @@
 PKG_NAME="medusa"
-PKG_VERSION="0.3.4"
-PKG_SHA256="f1f688f9f64753e4ba4c7d83775e90a8fcc58e9babe8643a52a236aa9864c531"
-PKG_REV="6"
+PKG_VERSION="0.4.6"
+PKG_SHA256="8978f3ff2858447ac01157c4483a37fb448b5f1735b604ec5d5d67101bb9a538"
+PKG_REV="7"
 PKG_SITE="https://github.com/pymedusa/Medusa"
-PKG_URL="https://github.com/pymedusa/Medusa/archive/v$PKG_VERSION.tar.gz"
+PKG_URL="https://github.com/pymedusa/Medusa/archive/v.${PKG_VERSION}.tar.gz"
 PKG_DEPENDS_TARGET="toolchain unrar"
 PKG_SECTION="service"
 
