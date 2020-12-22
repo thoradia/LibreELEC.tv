@@ -1,6 +1,6 @@
 PKG_NAME="nordvpn"
-PKG_VERSION="3.8.7"
-PKG_REV="12"
+PKG_VERSION="3.8.8"
+PKG_REV="13"
 PKG_LICENSE="Prop."
 PKG_SITE="https://nordvpn.com/"
 PKG_DEPENDS_TARGET="toolchain iproute2 ipset libxslt sysctl"
@@ -19,11 +19,11 @@ PKG_DISCLAIMER="Keep it legal and carry on"
 case ${ARCH} in
   arm)
     arch="armhf"
-    PKG_SHA256="278da3bfb654eed2f6700b3db59128bec0557a83b8e7504dada9d48e2fb71d2a"
+    PKG_SHA256="414bbd28e87808d388d114bdc4a96f10f0753f8dc1c3b070088d9a55d11dcc5c"
     ;;
   x86_64)
     arch="amd64"
-    PKG_SHA256="40e6342c692118eeabc613e91ae4ee0f79b43d31a3dfb59e7c839be99ac8f1a4"
+    PKG_SHA256="9537b2c7324d41e31dbb5215768bcd32d827efb8d12214b26cb74c6d391fd96c"
     ;;
 esac
 
