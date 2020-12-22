@@ -13,6 +13,9 @@ if [ "${vd}" != "${vh}" ]; then
   cp -r ${ADDON_DIR}/nordvpn/* ${ADDON_HOME}/nordvpn
 fi
 
+rm -fr /run/nordvpn/nordvpnd.sock
+mkdir -p /run/nordvpn
+
 HOME=${ADDON_HOME} \
 PATH=${ADDON_DIR}/bins:${PATH} \
 exec nice -n "${nice:-10}" \
