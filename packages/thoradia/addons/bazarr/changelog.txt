@@ -1,1 +1,1 @@
-- Bazarr version 0.9.0.6
+- Bazarr version 0.9.0.7
