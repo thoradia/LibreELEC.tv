@@ -2,9 +2,9 @@
 # Copyright (C) 2016-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="mono"
-PKG_VERSION="6.12.0.90"
-PKG_SHA256="51de5c02ad511333f93ff585bca54c8784de35af4ff27b759d16b46c4402cdac"
-PKG_REV="119"
+PKG_VERSION="6.12.0.107"
+PKG_SHA256="61f3cd629f8e99371c6b47c1f8d96b8ac46d9e851b5531eef20cdf9ab60d2a5f"
+PKG_REV="120"
 PKG_ARCH="any"
 PKG_LICENSE="MIT"
 PKG_SITE="http://www.mono-project.com"
