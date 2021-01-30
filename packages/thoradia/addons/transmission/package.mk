@@ -6,7 +6,7 @@ PKG_LICENSE="OSS"
 PKG_SITE="http://www.transmissionbt.com/"
 PKG_URL="https://github.com/transmission/transmission-releases/raw/master/${PKG_NAME}-${PKG_VERSION}.tar.xz"
 PKG_DEPENDS_TARGET="toolchain curl libevent"
-PKG_TOOLCHAIN="cmake-make"
+#PKG_TOOLCHAIN="cmake-make"
 
 PKG_IS_ADDON="yes"
 PKG_ADDON_NAME="Transmission"
